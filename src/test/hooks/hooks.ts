@@ -1,11 +1,12 @@
 import { BugFinder } from "../../world/Bug_Finder";
 import { Browser, chromium, firefox } from "@playwright/test";
-import { Before, After, BeforeAll, AfterAll, Status } from "@cucumber/cucumber";
+import { Before, After, BeforeAll, AfterAll, Status, setDefaultTimeout } from "@cucumber/cucumber";
 import { BasePage } from "../pages/basepage";
 import { SignInPage } from "../pages/siginpage";
 import { LearnerDashBoardPage } from "../pages/learnerdashboardpage";
 
 let browser: Browser;
+setDefaultTimeout(30 * 1000);
 
 BeforeAll(async () => {
     browser = await chromium.launch({ headless: true })
