@@ -13,17 +13,17 @@ node_modules/
 # ==========================
 # Playwright
 # ==========================
-playwright-report/
-blob-report/
-test-results/
-playwright/.cache/
-playwright/.auth/
+# playwright-report/
+# blob-report/
+# test-results/
+# playwright/.cache/
+# playwright/.auth/
 
 # ==========================
 # Reports
 # ==========================
-reports/
-coverage/
+# reports/
+# coverage/
 
 # ==========================
 # Logs
