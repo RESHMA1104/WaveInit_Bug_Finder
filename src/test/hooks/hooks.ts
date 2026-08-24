@@ -4,6 +4,7 @@ import { Before, After, BeforeAll, AfterAll, Status, setDefaultTimeout } from "@
 import { BasePage } from "../pages/basepage";
 import { SignInPage } from "../pages/siginpage";
 import { LearnerDashBoardPage } from "../pages/learnerdashboardpage";
+import { AdminLogin } from "../pages/adminPages/adminLoginPage";
 
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
@@ -19,6 +20,7 @@ Before(async function (this: BugFinder) {
     this.basepage = new BasePage(this.page);
     this.signinpage = new SignInPage(this.page);
     this.learnerdashboardpage = new LearnerDashBoardPage(this.page);
+    this.adminLogin = new AdminLogin(this.page);
 });
 
 After(async function (this: BugFinder, { pickle, result }) {

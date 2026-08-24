@@ -1,8 +1,9 @@
 {
   "name": "waveinit_bug_finder",
   "version": "1.0.0",
-  "description": "",
+  "description": "Real-time web automation testing framework for WaveInit using Playwright, Cucumber, and TypeScript.",
   "main": "index.js",
+
   "scripts": {
     "test": "cucumber-js",
     "register": "cucumber-js --tags @Register",
@@ -15,28 +16,47 @@
     "rerun": "cucumber-js --profile rerun",
     "test:report": "npm run test && npm run report"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RESHMA1104/WaveInit_Bug_Finder.git"
   },
-  "keywords": [],
-  "author": "",
+
+  "keywords": [
+    "playwright",
+    "cucumber",
+    "typescript",
+    "automation-testing",
+    "bdd",
+    "web-automation",
+    "functional-testing",
+    "regression-testing",
+    "real-time-testing",
+    "team-project"
+  ],
+
+  "author": "WaveInit Automation Team",
+
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/RESHMA1104/WaveInit_Bug_Finder/issues"
+
+  "engines": {
+    "node": "22.23.2",
+    "npm": ">=11"
   },
-  "homepage": "https://github.com/RESHMA1104/WaveInit_Bug_Finder#readme",
+
+  "type": "commonjs",
+
   "devDependencies": {
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.2.0",
-    "multiple-cucumber-html-reporter": "^3.8.0",
     "typescript": "^5.9.3"
   },
+
   "dependencies": {
     "@cucumber/cucumber": "^13.2.1",
     "csv-parse": "^7.0.2",
     "dotenv": "^17.4.2",
+    "multiple-cucumber-html-reporter": "^3.8.0",
     "ts-node": "^10.9.2",
     "winston": "^3.19.0",
     "xlsx": "^0.18.5"
