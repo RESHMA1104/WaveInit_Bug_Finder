@@ -49,6 +49,7 @@
   "devDependencies": {
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.2.0",
+    "multiple-cucumber-html-reporter": "^3.8.0",
     "typescript": "^5.9.3"
   },
 
