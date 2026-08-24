@@ -5,25 +5,25 @@ node_modules/
 # ==========================
 # Environment Files
 # ==========================
-# .env
-# .env.*
-# env/
-# *.env
+.env
+.env.*
+env/
+*.env
 
 # ==========================
 # Playwright
 # ==========================
-# playwright-report/
-# blob-report/
-# test-results/
-# playwright/.cache/
-# playwright/.auth/
+playwright-report/
+blob-report/
+test-results/
+playwright/.cache/
+playwright/.auth/
 
 # ==========================
 # Reports
 # ==========================
-# reports/
-# coverage/
+reports/
+coverage/
 
 # ==========================
 # Logs
