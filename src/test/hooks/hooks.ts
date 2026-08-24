@@ -1,6 +1,9 @@
 import { BugFinder } from "../../world/Bug_Finder";
 import { Browser, chromium, firefox } from "@playwright/test";
 import { Before, After, BeforeAll, AfterAll, Status } from "@cucumber/cucumber";
+import { BasePage } from "../pages/basepage";
+import { SignInPage } from "../pages/siginpage";
+import { LearnerDashBoardPage } from "../pages/learnerdashboardpage";
 
 let browser: Browser;
 
@@ -12,6 +15,9 @@ Before(async function (this: BugFinder) {
     this.browser = browser;
     this.browserContext = await this.browser.newContext();
     this.page = await this.browserContext.newPage();
+    this.basepage = new BasePage(this.page);
+    this.signinpage = new SignInPage(this.page);
+    this.learnerdashboardpage = new LearnerDashBoardPage(this.page);
 });
 
 After(async function (this: BugFinder, { pickle, result }) {
