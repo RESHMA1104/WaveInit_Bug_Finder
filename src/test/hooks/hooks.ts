@@ -5,6 +5,7 @@ import { BasePage } from "../pages/basepage";
 import { SignInPage } from "../pages/siginpage";
 import { LearnerDashBoardPage } from "../pages/learnerdashboardpage";
 import { AdminLogin } from "../pages/adminPages/adminLoginPage";
+import { TrainerLogin } from "../pages/TrainerLoginPage";
 
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
@@ -21,6 +22,7 @@ Before(async function (this: BugFinder) {
     this.signinpage = new SignInPage(this.page);
     this.learnerdashboardpage = new LearnerDashBoardPage(this.page);
     this.adminLogin = new AdminLogin(this.page);
+    this.trainerLogin = new TrainerLogin(this.page);
 });
 
 After(async function (this: BugFinder, { pickle, result }) {
