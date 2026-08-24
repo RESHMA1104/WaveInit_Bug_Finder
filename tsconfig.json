@@ -5,6 +5,7 @@
         "types": ["node"],
         "lib": ["ES2022","DOM"],
         "esModuleInterop": true,
-        "skipDefaultLibCheck": true
+        "skipDefaultLibCheck": true,
+        "resolveJsonModule": true
     }
 }
