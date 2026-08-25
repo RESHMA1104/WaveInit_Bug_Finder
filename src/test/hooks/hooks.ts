@@ -7,6 +7,7 @@ import { LearnerDashBoardPage } from "../pages/learnerPages/learnerdashboardpage
 import { AdminLogin } from "../pages/adminPages/adminLoginPage";
 import { TrainerLogin } from "../pages/TrainerLoginPage";
 import { ExploreTrainingPage } from "../pages/learnerPages/learnerexploretrainingpage";
+import { TrainingSession } from "../pages/adminPages/trainingPrograms";
 import { LearnerCertificatePage } from "../pages/learnerCertificatePage";
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
@@ -25,7 +26,8 @@ Before(async function (this: BugFinder) {
     this.adminLogin = new AdminLogin(this.page);
     this.trainerLogin = new TrainerLogin(this.page);
     this.exploretrainingpage = new ExploreTrainingPage(this.page);
-    this.certificate=new LearnerCertificatePage(this.page);
+    this.trainingSession = new TrainingSession(this.page);
+    this.learnerCertificatePage = new LearnerCertificatePage(this.page);
 });
 
 After(async function (this: BugFinder, { pickle, result }) {
