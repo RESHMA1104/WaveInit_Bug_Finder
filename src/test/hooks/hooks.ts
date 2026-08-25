@@ -9,7 +9,6 @@ import { TrainerLogin } from "../pages/TrainerLoginPage";
 import { ExploreTrainingPage } from "../pages/learnerPages/learnerexploretrainingpage";
 import { TrainingSession } from "../pages/adminPages/trainingPrograms";
 import { LearnerCertificatePage } from "../pages/learnerCertificatePage";
-
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
 

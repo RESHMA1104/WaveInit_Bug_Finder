@@ -9,7 +9,6 @@ import type { ExploreTrainingPage } from "../test/pages/learnerPages/learnerexpl
 import {TrainingSession} from "../test/pages/adminPages/trainingPrograms"
 import{LearnerCertificatePage} from "../test/pages/learnerCertificatePage";
 
-
 export class BugFinder extends World {
     browser!: Browser;
     browserContext!: BrowserContext;
