@@ -5,5 +5,10 @@
         "password": "sriram123@",
         "successMsg": "Learner"
       }
+    ],"searchData":[
+      {
+        "valid":"Rishwa",
+        "invalid":"cockroach"
+      }
     ]
   }
