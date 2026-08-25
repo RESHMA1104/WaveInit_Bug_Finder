@@ -3,10 +3,11 @@ import { Browser, chromium, firefox } from "@playwright/test";
 import { Before, After, BeforeAll, AfterAll, Status, setDefaultTimeout } from "@cucumber/cucumber";
 import { BasePage } from "../pages/basepage";
 import { SignInPage } from "../pages/siginpage";
-import { LearnerDashBoardPage } from "../pages/learnerdashboardpage";
+import { LearnerDashBoardPage } from "../pages/learnerPages/learnerdashboardpage";
 import { AdminLogin } from "../pages/adminPages/adminLoginPage";
 import { TrainerLogin } from "../pages/TrainerLoginPage";
-import { LearnerCertificatePage } from "../pages/learnerCertificatePage";
+import { ExploreTrainingPage } from "../pages/learnerPages/learnerexploretrainingpage";
+
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
 
@@ -23,7 +24,7 @@ Before(async function (this: BugFinder) {
     this.learnerdashboardpage = new LearnerDashBoardPage(this.page);
     this.adminLogin = new AdminLogin(this.page);
     this.trainerLogin = new TrainerLogin(this.page);
-    this.certificate=new LearnerCertificatePage(this.page);
+    this.exploretrainingpage = new ExploreTrainingPage(this.page);
 });
 
 After(async function (this: BugFinder, { pickle, result }) {

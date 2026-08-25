@@ -1,0 +1,21 @@
+{
+    "loginData": [
+      {
+        "email": "titooram123@gmail.com",
+        "password": "sriram123@",
+        "successMsg": "Learner"
+      }
+    ],
+    "searchData":[
+      {
+        "valid":"Rishwa",
+        "invalid":"cockroach"
+      }
+    ],
+    "filterData":[
+      {
+        "openFilter":"Join Training",
+        "joinedFilter":" Already enrolled"
+      }
+    ]
+  }
