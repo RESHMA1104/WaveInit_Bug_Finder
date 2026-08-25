@@ -1,7 +1,8 @@
 import { Then, When } from "@cucumber/cucumber";
 import type { BugFinder } from "../../../world/Bug_Finder";
 import { expect } from "playwright/test";
-import loginData from "../../../../test-data/learnerLoginData.json";
+import searchData from "../../../../test-data/learnerData.json";
+import filterData from "../../../../test-data/learnerData.json";
 import { logger } from "../../../utils/logger";
 
 When('the learner clicks on explore Course Button', async function (this: BugFinder) {
@@ -27,13 +28,13 @@ Then('the learner should displayed with Success message', async function (this: 
     logger.info("Course enrollment success message verified successfully");
 });
 When('the learner enter the Course name in Search input field', async function (this: BugFinder) {
-    const searchCourseName = loginData.searchData[0].valid;
+    const searchCourseName = searchData.searchData[0].valid;
     logger.info(`Entering course name in Search input field: ${searchCourseName}`);
     await this.exploretrainingpage.enterSearchValue(searchCourseName);
     logger.info(`Course name entered successfully: ${searchCourseName}`);
 });
 Then('the learner should be dispalyed with search results matches to searched course name', async function (this: BugFinder) {
-    const searchCourseName = loginData.searchData[0].valid;
+    const searchCourseName = searchData.searchData[0].valid;
     logger.info(`Verifying search results for course name: ${searchCourseName}`);
     const actualCourseNames = await this.exploretrainingpage.getAllSearchResultCourseName(searchCourseName);
     logger.info(`Total search results found: ${actualCourseNames.length}`);
@@ -48,4 +49,54 @@ Then('the learner should be dispalyed with search results matches to searched co
     }
     expect(found).toBe(true);
     logger.info(`Search result verification completed for course: ${searchCourseName}`);
+});
+When('the learner enter the invalid course name in search input field', async function (this: BugFinder) {
+    const invalidCourseName = searchData.searchData[0].invalid;
+    logger.info(`Entering invalid course name in Search input field: ${invalidCourseName}`);
+    await this.exploretrainingpage.enterSearchValue(invalidCourseName);
+    logger.info("Invalid course name entered successfully");
+});
+Then('the learner should be displayed with No matches found', async function (this: BugFinder) {
+    logger.info("Verifying No matches message");
+    const actual = await this.exploretrainingpage.getNoMatchText();
+    logger.info(`Actual No matches message: ${actual}`);
+    expect(actual).toBe("No matches");
+    logger.info("No matches message validation passed");
+});
+Then('the learner should see only courses that are not enrolled', async function (this: BugFinder) {
+    logger.info("Verifying that only unregistered courses are displayed");
+    const allUnRegisteredButtonInnerTexts = await this.exploretrainingpage.getAllUnRegisteredButtonInnerText();
+    logger.info(`Total unregistered courses found: ${allUnRegisteredButtonInnerTexts.length}`);
+    let found = true;
+    for (const text of allUnRegisteredButtonInnerTexts) {
+        logger.info("Text: " + text);
+        if (!text.includes(filterData.filterData[0].openFilter)) {
+            logger.info("Unregistered course validation failed for: " + text);
+            found = false;
+            break;
+        }
+    }
+    expect(found).toBe(true);
+    logger.info("Unregistered courses validation passed");
+});
+
+When('te learner choose joined course in filter', async function (this: BugFinder) {
+    await this.exploretrainingpage.clickJoinedFilterButton();
+});
+
+Then('the learner should see only courses that are enrolled', async function (this: BugFinder) {
+    logger.info("Verifying that only enrolled courses are displayed");
+    const allRegisteredButtonInnerTexts = await this.exploretrainingpage.getAllRegisteredButtonInnerText();
+    logger.info(`Total registered courses found: ${allRegisteredButtonInnerTexts.length}`);
+    let found = true;
+    for (const text of allRegisteredButtonInnerTexts) {
+        logger.info("Text: " + text);
+        if (!text.includes(filterData.filterData[0].joinedFilter)) {
+            logger.info("registered course validation failed for: " + text);
+            found = false;
+            break;
+        }
+    }
+    expect(found).toBe(true);
+    logger.info("Enrolled courses validation passed");
 });

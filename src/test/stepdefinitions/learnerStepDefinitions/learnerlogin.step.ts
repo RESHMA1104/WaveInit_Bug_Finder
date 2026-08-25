@@ -1,6 +1,6 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import { BugFinder } from "../../../world/Bug_Finder";
-import loginData from "../../../../test-data/learnerLoginData.json";
+import loginData from "../../../../test-data/learnerData.json";
 import { expect } from "@playwright/test";
 import { logger } from "../../../utils/logger";
 

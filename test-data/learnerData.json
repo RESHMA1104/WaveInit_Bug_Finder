@@ -5,10 +5,17 @@
         "password": "sriram123@",
         "successMsg": "Learner"
       }
-    ],"searchData":[
+    ],
+    "searchData":[
       {
         "valid":"Rishwa",
         "invalid":"cockroach"
+      }
+    ],
+    "filterData":[
+      {
+        "openFilter":"Join Training",
+        "joinedFilter":" Already enrolled"
       }
     ]
   }

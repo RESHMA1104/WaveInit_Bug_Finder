@@ -15,7 +15,22 @@ Description:To check Whether the Functionality of Courses Searching,Enrolling.
     And the learner clicks on join training on listed courses
     Then the learner should displayed with Success message
 
-  Scenario: verify the Search Functionality of courses
+  Scenario: verify the Search Functionality of valid courses
     And the learner clicks on explore Course Button
     And the learner enter the Course name in Search input field
     Then the learner should be dispalyed with search results matches to searched course name
+
+  Scenario: verify the search Functionality with invalid Courses
+    And the learner clicks on explore Course Button
+    And the learner enter the invalid course name in search input field
+    Then the learner should be displayed with No matches found
+
+  Scenario: verify the filter open shows only unregistered courses
+    And the learner clicks on explore Course Button
+    And te learner choose open course in filter
+    Then the learner should see only courses that are not enrolled
+
+  Scenario: verify the filter open shows only unregistered courses
+    And the learner clicks on explore Course Button
+    And te learner choose joined course in filter
+    Then the learner should see only courses that are enrolled
