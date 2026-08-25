@@ -17,7 +17,7 @@ export class BugFinder extends World {
     learnerdashboardpage!: LearnerDashBoardPage;
     adminLogin!: AdminLogin
     trainerLogin!: TrainerLogin;
-        certificate!:LearnerCertificatePage;
+    certificate!:LearnerCertificatePage;
 
 }
 setWorldConstructor(BugFinder);
