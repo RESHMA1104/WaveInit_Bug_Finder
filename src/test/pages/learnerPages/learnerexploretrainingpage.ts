@@ -34,11 +34,18 @@ export class ExploreTrainingPage extends BasePage {
         await this.fill(this.searchBar, coursename);
     }
 
+    // async getAllSearchResultCourseName(courseName: string) {
+    //     await expect(
+    //         this.allCourseName.filter({ hasText: courseName }).first()
+    //     ).toBeVisible({ timeout: 10000 });
+
+    //     return await this.allTextContent(this.allCourseName);
+    // }
     async getAllSearchResultCourseName(courseName: string) {
         await expect(
             this.allCourseName.filter({ hasText: courseName }).first()
         ).toBeVisible({ timeout: 10000 });
 
-        return await this.allTextContent(this.allCourseName);
+        return await this.allCourseName.allTextContents();
     }
 }

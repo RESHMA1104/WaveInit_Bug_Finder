@@ -1,3 +1,0 @@
-src\test\features\learnerFunctionalityFeatures\learnerCourse.feature:12:18
-src\test\features\learnerFunctionalityFeatures\learnerLogin.feature:9:23:24:34:35
-src\test\features\learnerFunctionalityFeatures\lernerSignOut.feature:11
