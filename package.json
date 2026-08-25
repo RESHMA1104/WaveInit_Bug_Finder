@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js",
+    "search":"cucumber-js --tags @Search",
     "register": "cucumber-js --tags @Register",
     "rishwanth": "cucumber-js --tags @Rishwanth",
     "prasanna": "cucumber-js --tags @Prasanna",
@@ -39,12 +40,12 @@
   },
   "type": "commonjs",
   "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.2.0",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@cucumber/cucumber": "^13.2.1",
     "csv-parse": "^7.0.2",
     "dotenv": "^17.4.2",
     "multiple-cucumber-html-reporter": "^3.8.0",
