@@ -32,8 +32,8 @@ Before(async function (this: BugFinder) {
 
 After(async function (this: BugFinder, { pickle, result }) {
     if (result?.status == Status.FAILED && this.page) {
-        const screenshot = await this.page.screenshot({ path: `reports/screenshots/${pickle.name}.png` });
-        await this.attach(screenshot, "image/png");
+        const screenshotPath = `reports/screenshots/${pickle.name}.png`;
+        await this.page.screenshot({ path: screenshotPath });
     }
 
     await this.page.close();
