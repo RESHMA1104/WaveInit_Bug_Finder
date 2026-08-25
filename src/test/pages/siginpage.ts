@@ -7,6 +7,7 @@ export class SignInPage extends BasePage {
     private learnerPasswordField: Locator;
     private learnerSignInButton: Locator;
     private invalidUserPassErrorMessage: Locator;
+    private signInPageFormText: Locator;
 
     constructor(page: Page) {
         super(page);
@@ -15,6 +16,7 @@ export class SignInPage extends BasePage {
         this.learnerPasswordField = page.locator('#login-password');
         this.learnerSignInButton = page.locator('//button/child::span[text()="Sign in as "]');
         this.invalidUserPassErrorMessage = page.locator('//div[text()="Invalid email or password"]');
+        this.signInPageFormText = page.locator('//p[text()="Sign in to continue to your workspace"]');
 
     }
     async clickLearnerButton() {
@@ -46,6 +48,9 @@ export class SignInPage extends BasePage {
         return await passwordField.evaluate(
             (element: HTMLInputElement) => element.validationMessage
         );
+    }
+    async getSignInpageTxt() {
+        return await this.getText(this.signInPageFormText);
     }
 
 
