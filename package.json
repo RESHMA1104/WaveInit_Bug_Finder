@@ -14,8 +14,12 @@
     "parallel": "cucumber-js --parallel 2",
     "report": "ts-node src/helper/report.ts",
     "rerun": "cucumber-js --profile rerun",
-    "test:report": "npm run test && npm run report"
+    "test:report": "npm run test && npm run report",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "test:allure": "npm run test && npm run allure:generate"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RESHMA1104/WaveInit_Bug_Finder.git"

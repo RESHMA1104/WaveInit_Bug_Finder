@@ -7,6 +7,7 @@ import { AdminLogin } from "../test/pages/adminPages/adminLoginPage";
 import { TrainerLogin } from "../test/pages/TrainerLoginPage";
 import type { ExploreTrainingPage } from "../test/pages/learnerPages/learnerexploretrainingpage";
 import {TrainingSession} from "../test/pages/adminPages/trainingPrograms"
+import{LearnerCertificatePage} from "../test/pages/learnerCertificatePage";
 
 
 export class BugFinder extends World {
@@ -20,5 +21,6 @@ export class BugFinder extends World {
     trainerLogin!: TrainerLogin;
     exploretrainingpage!: ExploreTrainingPage;
     trainingSession!: TrainingSession
+    learnerCertificatePage!: LearnerCertificatePage
 }
 setWorldConstructor(BugFinder);

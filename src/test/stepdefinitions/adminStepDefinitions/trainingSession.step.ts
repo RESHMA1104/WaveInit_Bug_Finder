@@ -2,6 +2,16 @@ import { Given, When, Then } from "@cucumber/cucumber";
 import { logger } from "../../../utils/logger";
 import { BugFinder } from "../../../world/Bug_Finder";
 
+
+When('the admin clicks the Training Programs link in the left sidebar', async function (this: BugFinder) {
+    await this.trainingSession.clickTrainingProgramsLink();
+});
+
+Then('the application should redirect to the training sessions page', async function (this: BugFinder) {
+    await this.trainingSession.verifyRedirectedToTrainingSessions();
+});
+
+
 // ===================== Scenario: Create a new training session =====================
 
 When('the admin clicks the Add Training button', async function (this: BugFinder) {
@@ -12,8 +22,12 @@ Then('the application should navigate to the Create Training page', async functi
     await this.trainingSession.verifyCreateTrainingPageVisible();
 });
 
+When('the admin enters the training title {string} and description {string}', async function (this: BugFinder, title: string, description: string) {
+    await this.trainingSession.enterTrainingTitleAndDescription(title, description);
+});
+
 When('the admin enters the training title and description', async function (this: BugFinder) {
-    await this.trainingSession.enterTrainingTitleAndDescription('Python', 'Summa');
+    await this.trainingSession.enterTrainingTitleAndDescription('Python', 'Python programming training');
 });
 
 When('the admin selects the assigned trainer', async function (this: BugFinder) {
@@ -71,9 +85,9 @@ Then('the Edit Training Session page should be visible', async function (this: B
     await this.trainingSession.verifyEditPageVisible();
 });
 
-When('the admin edits the {string}', async function (this: BugFinder, field: string) {
+When('the admin edits the {string} to {string}', async function (this: BugFinder, field: string, newValue: string) {
     if (field === 'title') {
-        await this.trainingSession.editTrainingTitle('Pytest-Behave');
+        await this.trainingSession.editTrainingTitle(newValue);
     }
 });
 
