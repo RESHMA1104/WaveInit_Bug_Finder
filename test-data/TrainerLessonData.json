@@ -1,0 +1,7 @@
+{
+  "newModule": {
+    "title": "Module: Automated Test Module",
+    "description": "This module was created by an automated Playwright test.",
+    "summary": "Covers setup, structure, and validation steps generated for automation testing purposes."
+  }
+}

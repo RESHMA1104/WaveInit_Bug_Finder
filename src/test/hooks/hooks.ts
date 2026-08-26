@@ -6,6 +6,8 @@ import { SignInPage } from "../pages/siginpage";
 import { LearnerDashBoardPage } from "../pages/learnerdashboardpage";
 import { AdminLogin } from "../pages/adminPages/adminLoginPage";
 import { TrainerLogin } from "../pages/TrainerLoginPage";
+import { CourseStructurePage } from "../pages/TrainerCourseStrucuturePage";
+import { CourseLessonsPage } from "../pages/TrainerLessonPage";
 
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
@@ -23,6 +25,8 @@ Before(async function (this: BugFinder) {
     this.learnerdashboardpage = new LearnerDashBoardPage(this.page);
     this.adminLogin = new AdminLogin(this.page);
     this.trainerLogin = new TrainerLogin(this.page);
+    this.courseStructurePage = new CourseStructurePage(this.page);
+    this.courseLessonsPage = new CourseLessonsPage(this.page);
 });
 
 After(async function (this: BugFinder, { pickle, result }) {
