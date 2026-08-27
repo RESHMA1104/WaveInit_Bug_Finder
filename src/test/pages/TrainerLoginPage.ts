@@ -23,7 +23,7 @@ export class TrainerLogin extends BasePage {
 
         this.invalidErrorMessage = page.getByText("Invalid email or password");
 
-        this.trainerLoginDashboard = page.getByRole("button", { name: "Dashboard" });
+        this.trainerLoginDashboard = page.locator("button[class='wl-sidebar-item wl-sidebar-item--active'] span:nth-child(2) i");
     }
 
     async selectTrainerLogin() {
