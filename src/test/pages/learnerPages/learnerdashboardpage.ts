@@ -5,6 +5,7 @@ export class LearnerDashBoardPage extends BasePage {
     private learnerDashBoardAssertion: Locator;
     private signoutButton: Locator;
     private exploreCourseButton: Locator;
+    private myCourseButtonLeftDrawer: Locator;
 
 
     constructor(page: Page) {
@@ -12,6 +13,7 @@ export class LearnerDashBoardPage extends BasePage {
         this.learnerDashBoardAssertion = page.locator('//div[text()=" · Online"]');
         this.signoutButton = page.locator('//button[text()=" Sign Out"]');
         this.exploreCourseButton = page.locator('//button[text()=" Explore Courses"]');
+        this.myCourseButtonLeftDrawer = page.locator('//button/child::span[text()="My Courses"]');
     }
 
     async getLearnerDashboardSuccessText() {
@@ -28,5 +30,10 @@ export class LearnerDashBoardPage extends BasePage {
     async clickExploreCourseButton() {
         await this.click(this.exploreCourseButton);
     }
+    async clickMyCourseButton() {
+        await this.click(this.myCourseButtonLeftDrawer);
+    }
+
+
 
 }

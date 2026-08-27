@@ -5,16 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js",
-    "search":"cucumber-js --tags @Search",
+    "search": "cucumber-js --tags @Search",
     "register": "cucumber-js --tags @Register",
     "rishwanth": "cucumber-js --tags @Rishwanth",
+    "mycourse": "cucumber-js --tags @MyCourse",
     "prasanna": "cucumber-js --tags @Prasanna",
     "reshma": "cucumber-js --tags @Reshma",
     "haritha": "cucumber-js --tags @haritha",
     "parallel": "cucumber-js --parallel 2",
     "report": "ts-node src/helper/report.ts",
     "rerun": "cucumber-js --profile rerun",
-    "test:report": "npm run test && npm run report"
+    "test:report": "npm run test && npm run report",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "allure:report": "npm run allure:generate && npm run allure:open"
   },
   "repository": {
     "type": "git",
@@ -43,6 +47,8 @@
     "@cucumber/cucumber": "^11.3.0",
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.2.0",
+    "allure-commandline": "^2.43.0",
+    "allure-cucumberjs": "^3.11.0",
     "typescript": "^5.9.3"
   },
   "dependencies": {
