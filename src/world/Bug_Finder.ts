@@ -9,8 +9,9 @@ import { CourseStructurePage } from "../test/pages/TrainerCourseStrucuturePage";
 import { CourseLessonsPage } from "../test/pages/TrainerLessonPage";
 import type { ExploreTrainingPage } from "../test/pages/learnerPages/learnerexploretrainingpage";
 import type { LearnerCertificatePage } from "../test/pages/learnerCertificatePage";
-import {TrainingSession} from "../test/pages/adminPages/trainingPrograms"
-import{LearnerCertificatePage} from "../test/pages/learnerCertificatePage";
+import { TrainingSession } from "../test/pages/adminPages/trainingPrograms"
+import type { MyCoursePage } from "../test/pages/learnerPages/learnermycoursepage";
+import type { CoursePage } from "../test/pages/learnerPages/learnercoursepage";
 
 
 export class BugFinder extends World {
@@ -28,5 +29,7 @@ export class BugFinder extends World {
     certificate!: LearnerCertificatePage;
     trainingSession!: TrainingSession
     learnerCertificatePage!: LearnerCertificatePage
+    mycoursepage!: MyCoursePage;
+    coursepage!: CoursePage;
 }
 setWorldConstructor(BugFinder);

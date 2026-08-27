@@ -17,5 +17,10 @@
         "openFilter":"Join Training",
         "joinedFilter":" Already enrolled"
       }
+    ],
+    "myCourseData":[
+      {
+        "mycourseSuccess":"My Courses"
+      }
     ]
   }
