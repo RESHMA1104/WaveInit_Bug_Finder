@@ -3,11 +3,14 @@ import { Browser, chromium, firefox } from "@playwright/test";
 import { Before, After, BeforeAll, AfterAll, Status, setDefaultTimeout } from "@cucumber/cucumber";
 import { BasePage } from "../pages/basepage";
 import { SignInPage } from "../pages/siginpage";
-import { LearnerDashBoardPage } from "../pages/learnerdashboardpage";
+import { LearnerDashBoardPage } from "../pages/learnerPages/learnerdashboardpage";
 import { AdminLogin } from "../pages/adminPages/adminLoginPage";
 import { TrainerLogin } from "../pages/TrainerLoginPage";
 import { CourseStructurePage } from "../pages/TrainerCourseStrucuturePage";
 import { CourseLessonsPage } from "../pages/TrainerLessonPage";
+import { ExploreTrainingPage } from "../pages/learnerPages/learnerexploretrainingpage";
+import { TrainingSession } from "../pages/adminPages/trainingPrograms";
+import { LearnerCertificatePage } from "../pages/learnerCertificatePage";
 
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
@@ -27,12 +30,15 @@ Before(async function (this: BugFinder) {
     this.trainerLogin = new TrainerLogin(this.page);
     this.courseStructurePage = new CourseStructurePage(this.page);
     this.courseLessonsPage = new CourseLessonsPage(this.page);
+    this.exploretrainingpage = new ExploreTrainingPage(this.page);
+    this.trainingSession = new TrainingSession(this.page);
+    this.learnerCertificatePage = new LearnerCertificatePage(this.page);
 });
 
 After(async function (this: BugFinder, { pickle, result }) {
     if (result?.status == Status.FAILED && this.page) {
-        const screenshot = await this.page.screenshot({ path: `reports/screenshots/${pickle.name}.png` });
-        await this.attach(screenshot, "image/png");
+        const screenshotPath = `reports/screenshots/${pickle.name}.png`;
+        await this.page.screenshot({ path: screenshotPath });
     }
 
     await this.page.close();

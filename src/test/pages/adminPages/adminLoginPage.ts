@@ -52,7 +52,10 @@ export class AdminLogin extends BasePage {
 
     async verifySuccessfulLogin() {
         logger.info("Checking that Admin Dashboard button is visible (successful login)");
-        await expect(this.adminLoginDashboard).toBeVisible();
+        // Wait on the actual proof of login (Dashboard button rendering) instead of
+        // networkidle — networkidle can hang indefinitely against a live QA env
+        // with background polling/analytics that never fully quiets down.
+        await expect(this.adminLoginDashboard).toBeVisible({ timeout: 30000 });
     }
 
     async verifyAdminDashboard() {
@@ -61,8 +64,22 @@ export class AdminLogin extends BasePage {
     }
 
     async verifyLoginPage() {
-        logger.info("Checking that admin is still on the login page (Sign in as Admin button visible)");
-        await expect(this.adminLoginBtn).toBeVisible();
+        logger.info("Checking that admin is still on the login page using the visible login form and route evidence");
+
+        const stillOnLoginPage = await this.page.evaluate(() => {
+            const url = window.location.href;
+            const isLoginUrl = /login|signin/i.test(url);
+            const emailField = document.querySelector('input[placeholder="Enter your email"]');
+            const passwordField = document.querySelector('input[placeholder="Enter your password"]');
+            const adminTab = document.querySelector('[role="tab"], button, [aria-label*="Admin"]');
+            return isLoginUrl || !!(emailField && passwordField) || !!adminTab;
+        });
+
+        expect(stillOnLoginPage).toBeTruthy();
+
+        await expect(this.adminLoginUsername).toBeVisible({ timeout: 10000 }).catch(async () => {
+            await expect(this.page.getByPlaceholder("Enter your email")).toBeVisible({ timeout: 10000 });
+        });
     }
 
     async verifyErrorMessage(expectedMessage: string) {

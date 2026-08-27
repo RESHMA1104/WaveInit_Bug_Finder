@@ -37,6 +37,11 @@ export class BasePage {
         return await locator.textContent({ timeout: this.timeout });
     }
 
+    async getAllInnerText(locator: Locator) {
+        await expect(locator).toBeVisible({ timeout: this.timeout });
+        return await locator.allInnerTexts();
+    }
+
     // get the current URL
     async getUrl(page: Page) {
         return await page.url();
