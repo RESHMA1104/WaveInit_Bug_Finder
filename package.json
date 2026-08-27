@@ -8,6 +8,7 @@
     "search":"cucumber-js --tags @Search",
     "register": "cucumber-js --tags @Register",
     "rishwanth": "cucumber-js --tags @Rishwanth",
+    "mycourse":"cucumber-js --tags @MyCourse",
     "prasanna": "cucumber-js --tags @Prasanna",
     "reshma": "cucumber-js --tags @Reshma",
     "haritha": "cucumber-js --tags @haritha",
