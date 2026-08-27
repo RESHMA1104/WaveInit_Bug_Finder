@@ -1,0 +1,4 @@
+<<<<<<< HEAD
+src\test\features\adminFunctionalityFeatures\trainerFeature.feature:41
+=======
+>>>>>>> 627c32e7d76512b882568ab1f1902d2e433d5636
