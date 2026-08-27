@@ -11,6 +11,8 @@ import { CourseLessonsPage } from "../pages/TrainerLessonPage";
 import { ExploreTrainingPage } from "../pages/learnerPages/learnerexploretrainingpage";
 import { TrainingSession } from "../pages/adminPages/trainingPrograms";
 import { LearnerCertificatePage } from "../pages/learnerCertificatePage";
+import {TrainerFeature} from "../pages/adminPages/trainerFeature";
+
 
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
@@ -34,6 +36,7 @@ Before(async function (this: BugFinder) {
     this.certificate = new LearnerCertificatePage(this.page);
     this.trainingSession = new TrainingSession(this.page);
     this.learnerCertificatePage = new LearnerCertificatePage(this.page);
+    this.trainerFeature = new TrainerFeature(this.page);
 });
 
 After(async function (this: BugFinder, { pickle, result }) {

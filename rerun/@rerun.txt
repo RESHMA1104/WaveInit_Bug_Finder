@@ -1,1 +1,1 @@
-src\test\features\TrainerLogin.feature:12
+src\test\features\adminFunctionalityFeatures\trainerFeature.feature:41
