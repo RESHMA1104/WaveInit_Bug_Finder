@@ -1,4 +1,4 @@
-import {When, Then } from "@cucumber/cucumber";
+import { When, Then } from "@cucumber/cucumber";
 import { logger } from "../../utils/logger";
 import { BugFinder } from "../../world/Bug_Finder";
 

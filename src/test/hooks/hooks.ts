@@ -31,6 +31,7 @@ Before(async function (this: BugFinder) {
     this.courseStructurePage = new CourseStructurePage(this.page);
     this.courseLessonsPage = new CourseLessonsPage(this.page);
     this.exploretrainingpage = new ExploreTrainingPage(this.page);
+    this.certificate = new LearnerCertificatePage(this.page);
     this.trainingSession = new TrainingSession(this.page);
     this.learnerCertificatePage = new LearnerCertificatePage(this.page);
 });
