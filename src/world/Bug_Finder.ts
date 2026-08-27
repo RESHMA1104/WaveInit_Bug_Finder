@@ -6,6 +6,7 @@ import type { LearnerDashBoardPage } from "../test/pages/learnerPages/learnerdas
 import { AdminLogin } from "../test/pages/adminPages/adminLoginPage";
 import { TrainerLogin } from "../test/pages/TrainerLoginPage";
 import type { ExploreTrainingPage } from "../test/pages/learnerPages/learnerexploretrainingpage";
+import type { LearnerCertificatePage } from "../test/pages/learnerCertificatePage";
 
 
 export class BugFinder extends World {
@@ -18,5 +19,6 @@ export class BugFinder extends World {
     adminLogin!: AdminLogin
     trainerLogin!: TrainerLogin;
     exploretrainingpage!: ExploreTrainingPage;
+    certificate!: LearnerCertificatePage;
 }
 setWorldConstructor(BugFinder);
