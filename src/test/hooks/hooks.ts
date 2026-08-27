@@ -6,9 +6,12 @@ import { SignInPage } from "../pages/siginpage";
 import { LearnerDashBoardPage } from "../pages/learnerPages/learnerdashboardpage";
 import { AdminLogin } from "../pages/adminPages/adminLoginPage";
 import { TrainerLogin } from "../pages/TrainerLoginPage";
+import { CourseStructurePage } from "../pages/TrainerCourseStrucuturePage";
+import { CourseLessonsPage } from "../pages/TrainerLessonPage";
 import { ExploreTrainingPage } from "../pages/learnerPages/learnerexploretrainingpage";
 import { TrainingSession } from "../pages/adminPages/trainingPrograms";
 import { LearnerCertificatePage } from "../pages/learnerCertificatePage";
+
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
 
@@ -25,6 +28,8 @@ Before(async function (this: BugFinder) {
     this.learnerdashboardpage = new LearnerDashBoardPage(this.page);
     this.adminLogin = new AdminLogin(this.page);
     this.trainerLogin = new TrainerLogin(this.page);
+    this.courseStructurePage = new CourseStructurePage(this.page);
+    this.courseLessonsPage = new CourseLessonsPage(this.page);
     this.exploretrainingpage = new ExploreTrainingPage(this.page);
     this.trainingSession = new TrainingSession(this.page);
     this.learnerCertificatePage = new LearnerCertificatePage(this.page);
