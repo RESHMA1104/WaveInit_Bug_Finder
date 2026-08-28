@@ -42,7 +42,7 @@ export class CoursePage extends BasePage {
         return await this.getText(this.lessonSubTab);
     }
     async getAiQuizSTText() {
-        await this.page.waitForTimeout(5000);
+        await this.page.waitForTimeout(10000);
         return await this.getText(this.aiQuizSubTab);
     }
     async getDiscussionSTText() {
