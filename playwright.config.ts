@@ -77,8 +77,5 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-}); Then('the learner should displayed with Success message', function () {
-  // Write code here that turns the phrase above into concrete actions
-  return 'pending';
 });
 

@@ -1,8 +1,8 @@
 {
     "loginData": [
       {
-        "email": "titooram123@gmail.com",
-        "password": "sriram123@",
+        "email": "rishwa@gmail.com",
+        "password": "RishwaTest",
         "successMsg": "Learner"
       }
     ],
@@ -20,7 +20,17 @@
     ],
     "myCourseData":[
       {
-        "mycourseSuccess":"My Courses"
+        "mycourseSuccess":"My Courses",
+        "validSearch":"Agile",
+        "invalidSearch":"MCP",
+        "inavlidSearchMsg":"No courses found matching your criteria"
+      }
+    ],
+    "specificCourse":[
+      {
+        "lessons":"Learning Content",
+        "aiQuiz":"Quizzes",
+        "discussions":"Join the discussion"
       }
     ]
   }
