@@ -21,7 +21,7 @@ Feature: Trainer Feature
               And the admin selects the experience for the new trainer
               And the admin enters a new password "password" and retypes the same password to confirm
               And the admin clicks the Create Trainer button
-            #  Then the newly created trainer should be displayed
+             Then the newly created trainer should be displayed
 
         Scenario Outline: Search and filter trainer
              When the admin click the search bar and enters "<keyword>"

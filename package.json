@@ -44,7 +44,7 @@
   },
   "type": "commonjs",
   "devDependencies": {
-    "@cucumber/cucumber": "^11.3.0",
+    "@cucumber/cucumber": "^13.2.1",
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.2.0",
     "allure-commandline": "^2.43.0",
