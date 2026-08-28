@@ -13,13 +13,13 @@ import { TrainingSession } from "../pages/adminPages/trainingPrograms";
 import { LearnerCertificatePage } from "../pages/learnerCertificatePage";
 import { MyCoursePage } from "../pages/learnerPages/learnermycoursepage";
 import { CoursePage } from "../pages/learnerPages/learnercoursepage";
-import {TrainerFeature} from "../pages/adminPages/trainerFeature";
+import { TrainerFeature } from "../pages/adminPages/trainerFeature";
 
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
 
 BeforeAll(async () => {
-    browser = await chromium.launch({ headless: true })
+    browser = await chromium.launch({ headless: false })
 });
 
 Before(async function (this: BugFinder) {

@@ -27,7 +27,6 @@ Feature: Rishwanth_Adhishwar_K_27_08_2026 To Check the MyCourse Fuctionalities o
     And the learner enter the invalid course in search Bar
     Then the learner should displayed with No course found text
 
-  @MyCourse
   Scenario: To verify that lesson tab in specific course redirects to its sub tab
     And the learner clicks on myCourse in left drawer
     And the learner clicks on first course in my Course
@@ -41,7 +40,6 @@ Feature: Rishwanth_Adhishwar_K_27_08_2026 To Check the MyCourse Fuctionalities o
     And the learner clicks on quiz tab
     Then the learner should redirected to Quizzes  sub tab
 
-  @MyCourse
   Scenario: To verify that Discussion tab in specific course redirects to its sub tab
     And the learner clicks on myCourse in left drawer
     And the learner clicks on first course in my Course
