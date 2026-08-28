@@ -1,0 +1,22 @@
+{
+  "newQuiz": {
+    "title": "React Fundamentals - Automated Quiz",
+    "questions": [
+      {
+        "questionText": "Which hook is used to manage state in a functional React component?",
+        "options": ["useEffect", "useState", "useContext", "useReducer"],
+        "correctOptionIndex": 1
+      },
+      {
+        "questionText": "What does JSX stand for?",
+        "options": [
+          "JavaScript XML",
+          "Java Syntax Extension",
+          "JSON XML",
+          "JavaScript Extra"
+        ],
+        "correctOptionIndex": 0
+      }
+    ]
+  }
+}
