@@ -33,7 +33,6 @@ Feature: Rishwanth_Adhishwar_K_27_08_2026 To Check the MyCourse Fuctionalities o
     And the learner clicks on lessons tab
     Then the learner should redirected to learning content sub tab
 
-  @MyCourse
   Scenario: To verify that AI-Quiz tab in specific course redirects to its sub tab
     And the learner clicks on myCourse in left drawer
     And the learner clicks on first course in my Course
