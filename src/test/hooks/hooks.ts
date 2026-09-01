@@ -14,10 +14,11 @@ import { LearnerCertificatePage } from "../pages/learnerCertificatePage";
 import { MyCoursePage } from "../pages/learnerPages/learnermycoursepage";
 import { CoursePage } from "../pages/learnerPages/learnercoursepage";
 import { CourseQuizPage } from "../pages/TrainerCourseQuizPage";
-import {TrainerFeature} from "../pages/adminPages/trainerFeature";
+import { TrainerFeature } from "../pages/adminPages/trainerFeature";
 import { Participate } from "../pages/adminPages/participateFeature";
 import { AttendancePage } from "../pages/learnerPages/learnerattendancepage";
 import { ProgressAnalyticsPage } from "../pages/learnerPages/learnerprogressanalyticspage";
+import { ProfilePage } from "../pages/learnerPages/learnerprofilepage";
 
 
 let browser: Browser;
@@ -49,6 +50,7 @@ Before(async function (this: BugFinder) {
     this.participate = new Participate(this.page);
     this.attendancepage = new AttendancePage(this.page);
     this.progressanalyticspage = new ProgressAnalyticsPage(this.page);
+    this.profilepage = new ProfilePage(this.page);
 });
 
 After(async function (this: BugFinder, { pickle, result }) {
