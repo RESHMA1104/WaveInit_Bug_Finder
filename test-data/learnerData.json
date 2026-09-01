@@ -2,7 +2,7 @@
     "loginData": [
       {
         "email": "rishwa@gmail.com",
-        "password": "RishwaTest",
+        "password": "Rishwa1@Test",
         "successMsg": "Learner"
       }
     ],
@@ -21,7 +21,7 @@
     "myCourseData":[
       {
         "mycourseSuccess":"My Courses",
-        "validSearch":"Agile",
+        "validSearch":"Rishwa",
         "invalidSearch":"MCP",
         "inavlidSearchMsg":"No courses found matching your criteria"
       }

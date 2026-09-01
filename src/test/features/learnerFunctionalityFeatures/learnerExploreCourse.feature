@@ -9,7 +9,6 @@ Description:To check Whether the Functionality of Courses Searching,Enrolling.
     And the learner enters the valid password
     And the learner clicks on sign-in as learner Button
 
-  @MyCourse
   Scenario: Verify the enrollment of new course
     And the learner clicks on explore Course Button
     And te learner choose open course in filter
