@@ -1,4 +1,4 @@
-@Rishwanth @MyCourse
+@Rishwanth
 Feature: Rishwanth_Adhishwar_K_01_09_2026 To check the Progress And Analytics functianlities in WAVE INIT LMS Works as expected
 
   Background:

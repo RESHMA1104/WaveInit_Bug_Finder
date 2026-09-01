@@ -8,6 +8,7 @@ export class LearnerDashBoardPage extends BasePage {
     private myCourseButtonLeftDrawer: Locator;
     private attendenceButtonLeftDrawer: Locator;
     private progressAndAnalyticsLeftDrawerButton: Locator;
+    private profileButtonLeftDrawer: Locator;
 
 
     constructor(page: Page) {
@@ -18,6 +19,7 @@ export class LearnerDashBoardPage extends BasePage {
         this.myCourseButtonLeftDrawer = page.locator('//button/child::span[text()="My Courses"]');
         this.attendenceButtonLeftDrawer = page.locator('//button/child::span[text()="Attendance"]');
         this.progressAndAnalyticsLeftDrawerButton = page.locator('//button/child::span[text()="Progress & Analytics"]');
+        this.profileButtonLeftDrawer = page.locator('//span[text()="Profile"]');
     }
 
     async getLearnerDashboardSuccessText() {
@@ -44,6 +46,10 @@ export class LearnerDashBoardPage extends BasePage {
 
     async clickProgressAnalyticsButton() {
         await this.click(this.progressAndAnalyticsLeftDrawerButton);
+    }
+
+    async clickProfileButton() {
+        await this.click(this.profileButtonLeftDrawer);
     }
 
 

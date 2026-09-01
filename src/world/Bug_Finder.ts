@@ -13,11 +13,11 @@ import { TrainingSession } from "../test/pages/adminPages/trainingPrograms"
 import type { MyCoursePage } from "../test/pages/learnerPages/learnermycoursepage";
 import type { CoursePage } from "../test/pages/learnerPages/learnercoursepage";
 import { CourseQuizPage } from "../test/pages/TrainerCourseQuizPage";
-import {TrainerFeature} from "../test/pages/adminPages/trainerFeature"
-import { Participate } from "../test/pages/adminPages/participateFeature";
 import { TrainerFeature } from "../test/pages/adminPages/trainerFeature"
+import { Participate } from "../test/pages/adminPages/participateFeature";
 import type { AttendancePage } from "../test/pages/learnerPages/learnerattendancepage";
 import type { ProgressAnalyticsPage } from "../test/pages/learnerPages/learnerprogressanalyticspage";
+import type { ProfilePage } from "../test/pages/learnerPages/learnerprofilepage";
 
 
 export class BugFinder extends World {
@@ -42,5 +42,6 @@ export class BugFinder extends World {
     participate!: Participate
     attendancepage!: AttendancePage;
     progressanalyticspage!: ProgressAnalyticsPage;
+    profilepage!: ProfilePage;
 }
 setWorldConstructor(BugFinder);
