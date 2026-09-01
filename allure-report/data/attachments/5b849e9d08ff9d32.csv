@@ -1,0 +1,7 @@
+username,password,expectedMessage
+invalid@test.com,wrong123,Invalid email or password
+trainer@test.com,wrong123,Invalid email or password
+wrong@test.com,trainer123,Invalid email or password
+,trainer123,Please fill out this field.
+trainer@test.com,,Please fill out this field.
+,,Please fill out this field.

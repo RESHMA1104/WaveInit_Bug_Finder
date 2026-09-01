@@ -22,7 +22,7 @@ module.exports = {
           'progress',
           'json:reports/cucumber-json/cucumber-report.json',
           'html:reports/cucumber-html/cucumber-report.html',
-          'allure-cucumberjs/reporter',
+          //'allure-cucumberjs/reporter',
           'rerun:rerun/@rerun.txt'
         ],
   
@@ -44,7 +44,7 @@ module.exports = {
         'progress',
         'json:reports/rerun-cucumber-json/cucumber-report.json',
         'html:reports/rerun-cucumber-html/cucumber-report.html',
-        'allure-cucumberjs/reporter',
+        //'allure-cucumberjs/reporter',
         'rerun:rerun/@rerun.txt'
       ],
   
