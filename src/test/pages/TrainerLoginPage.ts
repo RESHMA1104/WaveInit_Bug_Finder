@@ -23,7 +23,7 @@ export class TrainerLogin extends BasePage {
 
         this.invalidErrorMessage = page.getByText("Invalid email or password");
 
-        this.trainerLoginDashboard = page.locator("button[class='wl-sidebar-item wl-sidebar-item--active'] span:nth-child(2) i");
+        this.trainerLoginDashboard = page.locator("//span[normalize-space()='Dashboard']");
     }
 
     async selectTrainerLogin() {
@@ -43,7 +43,7 @@ export class TrainerLogin extends BasePage {
     }
 
     async verifySuccessfulLogin() {
-        await expect(this.trainerLoginDashboard).toBeVisible();
+        await this.toBeVisible(this.trainerLoginDashboard);
     }
 
     async verifyTrainerDashboard() {
@@ -51,11 +51,11 @@ export class TrainerLogin extends BasePage {
     }
 
     async verifyLoginPage() {
-        await expect(this.trainerLoginBtn).toBeVisible();
+        await this.toBeVisible(this.trainerLoginBtn);
     }
 
     async verifyErrorMessage(expectedMessage: string) {
-        await expect(this.page.getByText(expectedMessage)).toBeVisible();
+        await this.toBeVisible(this.page.getByText(expectedMessage));
     }
 
     async verifyRequiredFieldMessage(field: Locator) {

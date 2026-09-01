@@ -1,4 +1,4 @@
-@Reshma
+@Reshmaa
 
 Feature: Trainer Adds a Module to a Course
 

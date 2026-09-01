@@ -14,6 +14,10 @@ When("the trainer enters a structure prompt {string}", async function (this: Bug
     await this.courseStructurePage.enterStructurePrompt(prompt);
 });
 
-Then("the course structure should be generated successfully", async function (this: BugFinder) {
+When("the trainer clicks the Generate Structure button", async function (this: BugFinder) {
+    await this.courseStructurePage.clickGenerateStructure();
+});
+
+Then("the course structure should be generated successfully", { timeout: 200 * 1000 }, async function (this: BugFinder) {
     await this.courseStructurePage.verifyStructureGenerated();
 });
