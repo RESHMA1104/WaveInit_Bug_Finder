@@ -5,17 +5,17 @@ import { logger } from "../../utils/logger";
 export class CourseStructurePage extends BasePage {
 
     private openCourseEditorOption: Locator;
-    private generateStructureHeading: Locator;
+    private structureGeneratedHeading: Locator;
     private generateFromPromptTextarea: Locator;
     private generateStructureBtn: Locator;
-    private generatedModulesList: Locator;
+    private structureGeneratedToast: Locator;
 
     constructor(page: Page) {
         super(page);
 
-        this.openCourseEditorOption = page.getByRole("menuitem", { name: "Open Course Editor" });
+        this.openCourseEditorOption = page.getByRole("button", { name: "Open Course Editor" });
 
-        this.generateStructureHeading = page.getByRole("heading", { name: "Generate Course Structure" });
+        this.structureGeneratedHeading = page.getByRole("heading", { name: "Generated Structure Preview" });
 
         this.generateFromPromptTextarea = page.getByPlaceholder(
             "e.g., Create a complete Python course for beginners, from basics to advanced, for 1 month with 7 hours of learning every day."
@@ -23,25 +23,32 @@ export class CourseStructurePage extends BasePage {
 
         this.generateStructureBtn = page.getByRole("button", { name: "Generate Structure" });
 
-        this.generatedModulesList = page.locator('[data-testid="generated-modules-list"]');
+        this.structureGeneratedToast = page.getByText("Course structure generated");
     }
 
     async openCourseEditorForCourse(courseTitle: string) {
         logger.info(`Opening actions menu for course: "${courseTitle}"`);
-        const rowActionsBtn = this.page
-            .locator("tr", { hasText: courseTitle })
-            .getByRole("button")
-            .last();
 
-        await this.click(rowActionsBtn);
+        // Make sure the course list has actually rendered before searching it
+        await this.page.getByText(courseTitle, { exact: true }).first().waitFor({ state: "visible", timeout: 15000 });
 
-        logger.info("Clicking 'Open Course Editor' option");
+        // Don't assume role="row" — scope to whichever container wraps the title text
+        const courseContainer = this.page
+            .locator("tr, [role='row'], div")
+            .filter({ hasText: courseTitle })
+            .last(); // .last() favors the most specific/innermost matching wrapper
+
+        const courseOptionsBtn = courseContainer.getByRole("button", { name: /course options|more options|actions/i });
+
+        await this.click(courseOptionsBtn);
+
+        logger.info("Clicking 'Open Course Editor' button");
         await this.click(this.openCourseEditorOption);
     }
 
     async verifyOnGenerateStructurePage() {
         logger.info("Verifying Generate Course Structure page is displayed");
-        await this.toBeVisible(this.generateStructureHeading);
+        await this.toBeVisible(this.structureGeneratedHeading);
     }
 
     async enterStructurePrompt(prompt: string) {
@@ -55,7 +62,7 @@ export class CourseStructurePage extends BasePage {
     }
 
     async verifyStructureGenerated() {
-        logger.info("Verifying course structure was generated");
-        await expect(this.generatedModulesList).toBeVisible({ timeout: 30000 });
-    }
+    logger.info("Waiting for course structure generation to complete (can take up to 2.5 minutes)");
+    await expect(this.structureGeneratedHeading).toBeVisible({ timeout: 180000 }); // 3 min ceiling
+}
 }

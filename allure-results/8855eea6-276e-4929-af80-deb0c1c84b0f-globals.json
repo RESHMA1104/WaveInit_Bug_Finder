@@ -1,0 +1,1 @@
+{"attachments":[],"errors":[{"message":"hook failed: page.screenshot: Target page, context or browser has been closed\n    at World.<anonymous> (D:\\WaveInit_Bug_Finder\\src\\test\\hooks\\hooks.ts:50:25)","trace":"    at World.<anonymous> (D:\\WaveInit_Bug_Finder\\src\\test\\hooks\\hooks.ts:50:25)","timestamp":1787924870061}]}

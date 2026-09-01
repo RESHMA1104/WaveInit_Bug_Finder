@@ -16,6 +16,9 @@ import { CoursePage } from "../pages/learnerPages/learnercoursepage";
 import { CourseQuizPage } from "../pages/TrainerCourseQuizPage";
 import {TrainerFeature} from "../pages/adminPages/trainerFeature";
 import { Participate } from "../pages/adminPages/participateFeature";
+import { AttendancePage } from "../pages/learnerPages/learnerattendancepage";
+import { ProgressAnalyticsPage } from "../pages/learnerPages/learnerprogressanalyticspage";
+
 
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
@@ -44,6 +47,8 @@ Before(async function (this: BugFinder) {
     this.courseQuizPage = new CourseQuizPage(this.page);
     this.trainerFeature = new TrainerFeature(this.page);
     this.participate = new Participate(this.page);
+    this.attendancepage = new AttendancePage(this.page);
+    this.progressanalyticspage = new ProgressAnalyticsPage(this.page);
 });
 
 After(async function (this: BugFinder, { pickle, result }) {
