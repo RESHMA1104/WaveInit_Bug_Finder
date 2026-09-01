@@ -18,6 +18,7 @@ import { TrainerFeature } from "../pages/adminPages/trainerFeature";
 import { Participate } from "../pages/adminPages/participateFeature";
 import { AttendancePage } from "../pages/learnerPages/learnerattendancepage";
 import { ProgressAnalyticsPage } from "../pages/learnerPages/learnerprogressanalyticspage";
+import { Interview } from "../pages/adminPages/interview";
 import { ProfilePage } from "../pages/learnerPages/learnerprofilepage";
 
 
@@ -50,6 +51,7 @@ Before(async function (this: BugFinder) {
     this.participate = new Participate(this.page);
     this.attendancepage = new AttendancePage(this.page);
     this.progressanalyticspage = new ProgressAnalyticsPage(this.page);
+    this.interview = new Interview(this.page);
     this.profilepage = new ProfilePage(this.page);
 });
 
