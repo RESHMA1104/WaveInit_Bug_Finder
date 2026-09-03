@@ -18,6 +18,7 @@ import { Participate } from "../test/pages/adminPages/participateFeature";
 import type { AttendancePage } from "../test/pages/learnerPages/learnerattendancepage";
 import type { ProgressAnalyticsPage } from "../test/pages/learnerPages/learnerprogressanalyticspage";
 import { Interview } from "../test/pages/adminPages/interview";
+import { RegisterPage } from "../test/pages/adminPages/register";
 
 
 export class BugFinder extends World {
@@ -43,5 +44,14 @@ export class BugFinder extends World {
     attendancepage!: AttendancePage;
     progressanalyticspage!: ProgressAnalyticsPage;
     interview!: Interview;
+    registerPage!: RegisterPage
+
+    get rp(): RegisterPage {
+        return this.registerPage;
+    }
+
+    get sp(): RegisterPage {
+        return this.registerPage;
+    }
 }
 setWorldConstructor(BugFinder);
