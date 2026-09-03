@@ -1,4 +1,4 @@
-@Reshmaa
+@Reshma
 
 Feature: Trainer Adds a Module to a Course
 
@@ -12,7 +12,7 @@ Feature: Trainer Adds a Module to a Course
               And the trainer enters valid trainer credentials
               And the trainer clicks the Login button
               And the trainer should be logged in successfully
-              And the trainer opens the course editor for "React Fundamental"
+              And the trainer opens the course editor for "React"
 
         Scenario: Trainer creates a new module with all fields filled
              When the trainer navigates to the Lessons tab

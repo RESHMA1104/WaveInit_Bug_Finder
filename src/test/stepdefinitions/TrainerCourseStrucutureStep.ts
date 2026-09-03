@@ -1,6 +1,9 @@
 import { When, Then } from "@cucumber/cucumber";
 import { BugFinder } from "../../world/Bug_Finder";
 
+When("the trainer navigates to My Trainings", async function (this: BugFinder) {
+    await this.courseStructurePage.navigateToMyTrainings();
+});
 
 When("the trainer opens the course editor for {string}", async function (this: BugFinder, courseTitle: string) {
     await this.courseStructurePage.openCourseEditorForCourse(courseTitle);

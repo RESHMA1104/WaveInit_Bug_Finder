@@ -1,4 +1,4 @@
-@Reshma @CodingAssessment
+@Reshmaa @CodingAssessment
 Feature: Trainer Generates Coding Assessment via AI
 
   Trainers should be able to open the Coding tab for one of their courses,
