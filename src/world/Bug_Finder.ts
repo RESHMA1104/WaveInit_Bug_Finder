@@ -15,11 +15,11 @@ import type { CoursePage } from "../test/pages/learnerPages/learnercoursepage";
 import { CourseQuizPage } from "../test/pages/TrainerCourseQuizPage";
 import {TrainerFeature} from "../test/pages/adminPages/trainerFeature"
 import { Participate } from "../test/pages/adminPages/participateFeature";
+import { Interview } from "../test/pages/adminPages/interview";
 import type { AttendancePage } from "../test/pages/learnerPages/learnerattendancepage";
 import type { ProgressAnalyticsPage } from "../test/pages/learnerPages/learnerprogressanalyticspage";
-import { Interview } from "../test/pages/adminPages/interview";
+import type { ProfilePage } from "../test/pages/learnerPages/learnerprofilepage";
 import { RegisterPage } from "../test/pages/adminPages/register";
-
 
 export class BugFinder extends World {
     browser!: Browser;
@@ -44,6 +44,7 @@ export class BugFinder extends World {
     attendancepage!: AttendancePage;
     progressanalyticspage!: ProgressAnalyticsPage;
     interview!: Interview;
+    profilepage!: ProfilePage;
     registerPage!: RegisterPage
 
     get rp(): RegisterPage {

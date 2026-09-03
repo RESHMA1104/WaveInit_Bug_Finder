@@ -14,11 +14,12 @@ import { LearnerCertificatePage } from "../pages/learnerCertificatePage";
 import { MyCoursePage } from "../pages/learnerPages/learnermycoursepage";
 import { CoursePage } from "../pages/learnerPages/learnercoursepage";
 import { CourseQuizPage } from "../pages/TrainerCourseQuizPage";
-import {TrainerFeature} from "../pages/adminPages/trainerFeature";
+import { TrainerFeature } from "../pages/adminPages/trainerFeature";
 import { Participate } from "../pages/adminPages/participateFeature";
 import { AttendancePage } from "../pages/learnerPages/learnerattendancepage";
 import { ProgressAnalyticsPage } from "../pages/learnerPages/learnerprogressanalyticspage";
 import { Interview } from "../pages/adminPages/interview";
+import { ProfilePage } from "../pages/learnerPages/learnerprofilepage";
 import { RegisterPage } from "../pages/adminPages/register";
 
 
@@ -26,7 +27,7 @@ let browser: Browser;
 setDefaultTimeout(30 * 1000);
 
 BeforeAll(async () => {
-    browser = await chromium.launch({ headless: true })
+    browser = await chromium.launch({ headless: false })
 });
 
 Before(async function (this: BugFinder) {
@@ -52,6 +53,7 @@ Before(async function (this: BugFinder) {
     this.attendancepage = new AttendancePage(this.page);
     this.progressanalyticspage = new ProgressAnalyticsPage(this.page);
     this.interview = new Interview(this.page);
+    this.profilepage = new ProfilePage(this.page);
     this.registerPage = new RegisterPage(this.page)
 });
 

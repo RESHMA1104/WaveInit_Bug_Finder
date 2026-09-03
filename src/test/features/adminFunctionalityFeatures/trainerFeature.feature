@@ -43,4 +43,8 @@ Feature: Trainer Feature
              Then the appropriate trainer details should be displayed
              When the admin click the Delete button
               And the admin confirms the deletion by clicking the Delete button in the confirmation popup
+<<<<<<< HEAD
              Then the message "Trainer deleted successfully." should be displayed
+=======
+             Then the message "Trainer deleted successfully." should be displayed
+>>>>>>> a9453ffb6cd28b93b1833e2e8086c1fa6f96573b
