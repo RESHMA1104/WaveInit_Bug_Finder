@@ -8,6 +8,7 @@
     "search": "cucumber-js --tags @Search",
     "register": "cucumber-js --tags @Register",
     "rishwanth": "cucumber-js --tags @Rishwanth",
+    "login": "cucumber-js --tags @Login",
     "mycourse": "cucumber-js --tags @MyCourse",
     "prasanna": "cucumber-js --tags @Prasanna",
     "reshma": "cucumber-js --tags @Reshma",
@@ -44,7 +45,7 @@
   },
   "type": "commonjs",
   "devDependencies": {
-    "@cucumber/cucumber": "^11.3.0",
+    "@cucumber/cucumber": "^13.2.1",
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.2.0",
     "allure-commandline": "^2.43.0",

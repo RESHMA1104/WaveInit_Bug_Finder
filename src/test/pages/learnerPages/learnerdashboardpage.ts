@@ -6,6 +6,9 @@ export class LearnerDashBoardPage extends BasePage {
     private signoutButton: Locator;
     private exploreCourseButton: Locator;
     private myCourseButtonLeftDrawer: Locator;
+    private attendenceButtonLeftDrawer: Locator;
+    private progressAndAnalyticsLeftDrawerButton: Locator;
+    private profileButtonLeftDrawer: Locator;
 
 
     constructor(page: Page) {
@@ -14,6 +17,9 @@ export class LearnerDashBoardPage extends BasePage {
         this.signoutButton = page.locator('//button[text()=" Sign Out"]');
         this.exploreCourseButton = page.locator('//button[text()=" Explore Courses"]');
         this.myCourseButtonLeftDrawer = page.locator('//button/child::span[text()="My Courses"]');
+        this.attendenceButtonLeftDrawer = page.locator('//button/child::span[text()="Attendance"]');
+        this.progressAndAnalyticsLeftDrawerButton = page.locator('//button/child::span[text()="Progress & Analytics"]');
+        this.profileButtonLeftDrawer = page.locator('//span[text()="Profile"]');
     }
 
     async getLearnerDashboardSuccessText() {
@@ -34,6 +40,17 @@ export class LearnerDashBoardPage extends BasePage {
         await this.click(this.myCourseButtonLeftDrawer);
     }
 
+    async clickAttendenceButton() {
+        await this.click(this.attendenceButtonLeftDrawer);
+    }
+
+    async clickProgressAnalyticsButton() {
+        await this.click(this.progressAndAnalyticsLeftDrawerButton);
+    }
+
+    async clickProfileButton() {
+        await this.click(this.profileButtonLeftDrawer);
+    }
 
 
 }

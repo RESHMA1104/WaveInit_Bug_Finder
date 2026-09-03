@@ -190,96 +190,76 @@ export class TrainerFeature extends BasePage {
         await this.confirmPasswordTrainer.fill(password);
     }
 
-    // /**
-    //  * Clicks the "Create Trainer" submit button and waits for the trainer-creation
-    //  * POST API response from /api/admin/create-trainer.
-    //  *
-    //  * FIX: previously this waited on a guessed endpoint ('/trainer'), which never
-    //  * matched the real request and caused a 30s timeout. It now matches on the
-    //  * confirmed path (CREATE_TRAINER_API_PATH) and the POST method, and starts
-    //  * the wait *before* clicking so there's no race between the click and the
-    //  * response arriving.
-    //  *
-    //  * The parsed body is logged and cached on `lastTrainerCreationResponse`
-    //  * so a later step (verifyTrainerCreationApiResponse) can assert on it
-    //  * without needing the response passed around manually.
-    //  */
-    // async clickCreateTrainerButton(): Promise<void> {
-    //     logger.info("Clicking the Create Trainer button and waiting for the create-trainer API response");
+    /**
+ * Clicks the "Create Trainer" submit button and waits for the trainer-creation
+ * POST API response from /api/admin/create-trainer.
+ *
+ * Waits for the response BEFORE clicking to avoid a race between the click
+ * and the response arriving. The parsed body is cached on
+ * `lastTrainerCreationResponse` for verifyTrainerCreationApiResponse().
+ */
+async clickCreateTrainerButton(): Promise<void> {
+        logger.info("Clicking the Create Trainer button and waiting for the create-trainer API response");
 
-    //     const [response] = await Promise.all([
-    //         this.page.waitForResponse(
-    //             (res) =>
-    //                 res.url().includes(TrainerFeature.CREATE_TRAINER_API_PATH) &&
-    //                 res.request().method() === 'POST',
-    //             { timeout: TrainerFeature.CREATE_API_TIMEOUT_MS }
-    //         ),
-    //         this.createTrainerButton.click(),
-    //     ]);
+        const [response] = await Promise.all([
+            this.page.waitForResponse(
+                (res) =>
+                    res.url().includes(TrainerFeature.CREATE_TRAINER_API_PATH) &&
+                    res.request().method() === 'POST',
+                { timeout: TrainerFeature.CREATE_API_TIMEOUT_MS }
+            ),
+            this.createTrainerButton.click(),
+        ]);
 
-    //     try {
-    //         this.lastTrainerCreationResponse = await response.json();
-    //         logger.info(`Trainer creation API response (status ${response.status()}): ${JSON.stringify(this.lastTrainerCreationResponse)}`);
-    //     } catch (err) {
-    //         logger.info(`Failed to parse trainer creation API response as JSON: ${err}`);
-    //         this.lastTrainerCreationResponse = null;
-    //     }
-    // }
+        expect(response.status(), "Expected trainer creation API to return 201 Created").toBe(201);
 
-    // /**
-    //  * Verifies the newly created trainer appears in the trainer list (UI check).
-    //  * Uses the cached name from enterTrainerBasicDetails() if none is passed.
-    //  */
-    // async verifyTrainerCreated(name?: string): Promise<void> {
-    //     const trainerName = name ?? this.lastCreatedTrainerName;
-    //     logger.info(`Verifying newly created trainer "${trainerName}" is displayed in the list`);
-    //     await expect(this.getTrainerRowByName(trainerName)).toBeVisible({
-    //         timeout: TrainerFeature.LIST_LOAD_TIMEOUT_MS
-    //     });
-    // }
-
-
-    async clickCreateTrainerButton(){
-        await this.click(this.createTrainerButton);
+    try {
+            this.lastTrainerCreationResponse = await response.json();
+            logger.info(`Trainer creation API response (status ${response.status()}): ${JSON.stringify(
+            this.lastTrainerCreationResponse)}`);
+        } catch (err) {
+            logger.info(`Failed to parse trainer creation API response as JSON: ${err}`);
+            this.lastTrainerCreationResponse = null;
+        }
     }
 
-
-
     /**
-     * Verifies the trainer-creation API response captured in clickCreateTrainerButton():
-     * - response has a truthy "id"
-     * - "name" matches the fullname entered on the form (lastCreatedTrainerName)
-     * - "role" is "TRAINER"
-     * - "message" is "Trainer created successfully"
-     *
-     * NOTE: the exact response field names (id/name/role/message) were inferred
-     * from an earlier example and not yet confirmed against this endpoint's
-     * actual response body. If this assertion fails, log
-     * `getLastTrainerCreationResponse()` to see the real shape and adjust the
-     * field names below accordingly.
-     *
-     * Throws (via expect) if clickCreateTrainerButton() was never called first,
-     * since there'd be no response to check.
-     */
-    async verifyTrainerCreationApiResponse(): Promise<void> {
+ * Verifies the trainer-creation API response captured in clickCreateTrainerButton():
+ * - "id" is a truthy string
+ * - "name" matches the fullname entered on the form
+ * - "email" matches the email entered on the form
+ * - "username" is present (server-generated, not asserted against form input)
+ * - "role" is "TRAINER"
+ * - "message" is "Trainer created successfully"
+ *
+ * Confirmed against actual response:
+ * { id: "503", name: "sadha", email: "sadah@gamil.com", username: "sadh2613", role: "TRAINER", message: "Trainer created successfully" }
+ *
+ * Throws (via expect) if clickCreateTrainerButton() was never called first,
+ * since there'd be no response to check.
+ */
+async verifyTrainerCreationApiResponse(email?: string): Promise<void> {
         const response = this.lastTrainerCreationResponse;
         logger.info(`Verifying trainer creation API response: ${JSON.stringify(response)}`);
 
-        expect(response, "Trainer creation API response was not captured - was clickCreateTrainerButton() called?")
-            .toBeTruthy();
+        expect(response, "Trainer creation API response was not captured - was clickCreateTrainerButton() called?").toBeTruthy();
 
         expect(response.id, "Expected trainer creation response to include an id").toBeTruthy();
 
         if (this.lastCreatedTrainerName) {
-            expect(response.name, "Trainer name in API response should match the entered fullname")
-                .toBe(this.lastCreatedTrainerName);
+            expect(response.name, "Trainer name in API response should match the entered fullname").toBe(this.lastCreatedTrainerName);
         }
 
+        if (email) {
+            expect(response.email, "Trainer email in API response should match the entered email").toBe(email);
+        }
+
+        expect(response.username, "Expected response to include a generated username").toBeTruthy();
         expect(response.role, "Expected role to be TRAINER").toBe('TRAINER');
-        expect(response.message, "Expected trainer creation success message")
-            .toBe('Trainer created successfully');
+        expect(response.message, "Expected trainer creation success message").toBe('Trainer created successfully');
     }
 
+   
     // =========================================================
     // ACTIONS — Search / Filter
     // =========================================================
