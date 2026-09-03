@@ -1,36 +1,42 @@
 {
-    "loginData": [
-      {
-        "email": "rishwa@gmail.com",
-        "password": "Rishwa1@Test",
-        "successMsg": "Learner"
-      }
-    ],
-    "searchData":[
-      {
-        "valid":"Rishwa",
-        "invalid":"cockroach"
-      }
-    ],
-    "filterData":[
-      {
-        "openFilter":"Join Training",
-        "joinedFilter":" Already enrolled"
-      }
-    ],
-    "myCourseData":[
-      {
-        "mycourseSuccess":"My Courses",
-        "validSearch":"Rishwa",
-        "invalidSearch":"MCP",
-        "inavlidSearchMsg":"No courses found matching your criteria"
-      }
-    ],
-    "specificCourse":[
-      {
-        "lessons":"Learning Content",
-        "aiQuiz":"Quizzes",
-        "discussions":"Join the discussion"
-      }
-    ]
-  }
+  "loginData": [
+    {
+      "email": "rishwa@gmail.com",
+      "password": "Rishwa1@Test",
+      "successMsg": "Learner"
+    }
+  ],
+  "searchData": [
+    {
+      "valid": "Rishwa",
+      "invalid": "cockroach"
+    }
+  ],
+  "filterData": [
+    {
+      "openFilter": "Join Training",
+      "joinedFilter": " Already enrolled"
+    }
+  ],
+  "myCourseData": [
+    {
+      "mycourseSuccess": "My Courses",
+      "validSearch": "Rishwa",
+      "invalidSearch": "MCP",
+      "inavlidSearchMsg": "No courses found matching your criteria"
+    }
+  ],
+  "specificCourse": [
+    {
+      "lessons": "Learning Content",
+      "aiQuiz": "Quizzes",
+      "discussions": "Join the discussion"
+    }
+  ],
+  "skills": [
+    {
+      "skillName": "Java",
+      "existSkillWarningMsg": "is already in your skills list."
+    }
+  ]
+}

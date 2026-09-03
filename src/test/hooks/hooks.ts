@@ -26,7 +26,7 @@ let browser: Browser;
 setDefaultTimeout(30 * 1000);
 
 BeforeAll(async () => {
-    browser = await chromium.launch({ headless: true })
+    browser = await chromium.launch({ headless: false })
 });
 
 Before(async function (this: BugFinder) {
