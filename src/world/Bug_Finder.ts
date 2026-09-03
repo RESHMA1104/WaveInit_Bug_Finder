@@ -14,6 +14,7 @@ import type { MyCoursePage } from "../test/pages/learnerPages/learnermycoursepag
 import type { CoursePage } from "../test/pages/learnerPages/learnercoursepage";
 import { CourseQuizPage } from "../test/pages/TrainerCourseQuizPage";
 import {TrainerFeature} from "../test/pages/adminPages/trainerFeature"
+import { CodingAssessmentPage } from "../test/pages/TrainerCodingPage";
 
 
 export class BugFinder extends World {
@@ -35,5 +36,6 @@ export class BugFinder extends World {
     coursepage!: CoursePage;
     courseQuizPage!: CourseQuizPage;
     trainerFeature!: TrainerFeature;
+    codingAssessmentPage!: CodingAssessmentPage
 }
 setWorldConstructor(BugFinder);
