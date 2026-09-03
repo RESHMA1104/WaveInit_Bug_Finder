@@ -20,6 +20,7 @@ import { AttendancePage } from "../pages/learnerPages/learnerattendancepage";
 import { ProgressAnalyticsPage } from "../pages/learnerPages/learnerprogressanalyticspage";
 import { Interview } from "../pages/adminPages/interview";
 import { ProfilePage } from "../pages/learnerPages/learnerprofilepage";
+import { RegisterPage } from "../pages/adminPages/register";
 
 
 let browser: Browser;
@@ -53,6 +54,7 @@ Before(async function (this: BugFinder) {
     this.progressanalyticspage = new ProgressAnalyticsPage(this.page);
     this.interview = new Interview(this.page);
     this.profilepage = new ProfilePage(this.page);
+    this.registerPage = new RegisterPage(this.page)
 });
 
 After(async function (this: BugFinder, { pickle, result }) {
