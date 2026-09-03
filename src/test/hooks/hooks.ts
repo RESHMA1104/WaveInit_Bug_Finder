@@ -20,7 +20,7 @@ import { AttendancePage } from "../pages/learnerPages/learnerattendancepage";
 import { ProgressAnalyticsPage } from "../pages/learnerPages/learnerprogressanalyticspage";
 import { Interview } from "../pages/adminPages/interview";
 import { ProfilePage } from "../pages/learnerPages/learnerprofilepage";
-
+import { LearnerLeaderboardPage } from "../pages/LearnerLeaderboardPage";
 
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
@@ -53,6 +53,7 @@ Before(async function (this: BugFinder) {
     this.progressanalyticspage = new ProgressAnalyticsPage(this.page);
     this.interview = new Interview(this.page);
     this.profilepage = new ProfilePage(this.page);
+    this.learnerLeaderboardPage = new LearnerLeaderboardPage(this.page);
 });
 
 After(async function (this: BugFinder, { pickle, result }) {
