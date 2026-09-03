@@ -1,60 +1,65 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","5651","To check Sign-out Functionality is redirected to Sig-in page","","2026-08-28","passed","2026-08-28","","","",""
+"","17687","To verify the search functionality in My Courses with invalid course","","2026-08-28","passed","2026-08-28","","","",""
+"","35393","Participant Delete","","2026-08-28","passed","2026-08-28","","","",""
+"Trainer Login functionality should allow authorized trainers
+  to access the Trainer Dashboard with valid credentials and prevent
+  unauthorized access with invalid or incomplete credentials.","6781","Trainer Login with valid credentials","","2026-08-28","broken","2026-08-28","","","",""
+"","36062","Search and filter trainer","","2026-08-28","broken","2026-08-28","","","",""
+"Trainer Login functionality should allow authorized trainers
+  to access the Trainer Dashboard with valid credentials and prevent
+  unauthorized access with invalid or incomplete credentials.","1576","Trainer Login with invalid or missing credentials","","2026-08-28","passed","2026-08-28","","","",""
+"Description:Sign-In Functionality with both valid and invalid case","3638","Signin Functionality with leaving field empty","","2026-08-31","passed","2026-08-31","","","",""
+"Description:To check Whether the Functionality of Courses Searching,Enrolling.","6648","verify the search Functionality with invalid Courses","","2026-08-28","passed","2026-08-28","","","",""
+"Trainer Login functionality should allow authorized trainers
+  to access the Trainer Dashboard with valid credentials and prevent
+  unauthorized access with invalid or incomplete credentials.","3798","Trainer Login with invalid or missing credentials","","2026-08-28","passed","2026-08-28","","","",""
+"Description:To check Whether the Functionality of Courses Searching,Enrolling.","14447","Verify the enrollment of new course","","2026-08-28","passed","2026-08-28","","","",""
+"Description:To check Whether the Functionality of Courses Searching,Enrolling.","9690","verify the filter open shows only unregistered courses","","2026-08-28","passed","2026-08-28","","","",""
 "Trainers should be able to open the Course Editor for one of
   their courses and generate a course structure automatically by
   describing it in a prompt.","6552","Trainer generates a course structure from a prompt","","2026-08-28","passed","2026-08-28","","","",""
+"Description:Sign-In Functionality with both valid and invalid case","8129","Signin Functionality with valid credentials","","2026-08-31","passed","2026-08-31","","","",""
+"Trainer Login functionality should allow authorized trainers
+  to access the Trainer Dashboard with valid credentials and prevent
+  unauthorized access with invalid or incomplete credentials.","2040","Trainer Login with invalid or missing credentials","","2026-08-28","passed","2026-08-28","","","",""
+"","22830","Participant Search","","2026-08-28","passed","2026-08-28","","","",""
+"Trainers should be able to open a course's Lessons tab and
+  create a new module by providing a title, description, and optional
+  summary content.","7178","Trainer creates a new module with all fields filled","","2026-08-28","broken","2026-08-28","","","",""
 "Trainers should be able to open the Course Editor for one of
   their courses and generate a course structure automatically by
   describing it in a prompt.","6777","Trainer generates a course structure from a prompt","","2026-08-28","passed","2026-08-28","","","",""
 "","9579","To verify the search functionality in My Courses with valid course","","2026-08-28","passed","2026-08-28","","","",""
-"Trainers should be able to open a course's Lessons tab and
-  create a new module by providing a title, description, and optional
-  summary content.","9855","Trainer creates a new module with only the required title","","2026-08-28","broken","2026-08-28","","","",""
-"Description:To check Whether the Functionality of Courses Searching,Enrolling.","14447","Verify the enrollment of new course","","2026-08-28","passed","2026-08-28","","","",""
+"","32665","Search and filter trainer","","2026-08-28","passed","2026-08-28","","","",""
+"","15002","Create new Participant","","2026-08-28","passed","2026-08-28","","","",""
+"","13865","To verify that Discussion tab in specific course redirects to its sub tab","","2026-08-28","passed","2026-08-28","","","",""
+"","5651","To check Sign-out Functionality is redirected to Sig-in page","","2026-08-28","passed","2026-08-28","","","",""
+"","40692","Admin views detailed trainer information","","2026-08-28","broken","2026-08-28","","","",""
+"Description:Sign-In Functionality with both valid and invalid case","5058","Signin Functionality with invalid credentials","","2026-08-31","passed","2026-08-31","","","",""
 "","12048","Certificate Functionality of a Learner","","2026-08-28","broken","2026-08-28","","","",""
-"Trainers should be able to open a course's Lessons tab and
-  create a new module by providing a title, description, and optional
-  summary content.","7178","Trainer creates a new module with all fields filled","","2026-08-28","broken","2026-08-28","","","",""
-"Trainer Login functionality should allow authorized trainers
-  to access the Trainer Dashboard with valid credentials and prevent
-  unauthorized access with invalid or incomplete credentials.","3798","Trainer Login with invalid or missing credentials","","2026-08-28","passed","2026-08-28","","","",""
-"Description:Sign-In Functionality with both valid and invalid case","5365","Signin Functionality with valid credentials","","2026-08-28","passed","2026-08-28","","","",""
-"Trainer Login functionality should allow authorized trainers
-  to access the Trainer Dashboard with valid credentials and prevent
-  unauthorized access with invalid or incomplete credentials.","3095","Trainer Login with invalid or missing credentials","","2026-08-28","passed","2026-08-28","","","",""
-"","8016","Create a new trainer","","2026-08-28","passed","2026-08-28","","","",""
-"Description:Sign-In Functionality with both valid and invalid case","3911","Signin Functionality with leaving field empty","","2026-08-28","passed","2026-08-28","","","",""
-"","21327","Search and filter trainer","","2026-08-28","passed","2026-08-28","","","",""
-"","17687","To verify the search functionality in My Courses with invalid course","","2026-08-28","passed","2026-08-28","","","",""
-"Trainer Login functionality should allow authorized trainers
-  to access the Trainer Dashboard with valid credentials and prevent
-  unauthorized access with invalid or incomplete credentials.","1576","Trainer Login with invalid or missing credentials","","2026-08-28","passed","2026-08-28","","","",""
-"Trainer Login functionality should allow authorized trainers
-  to access the Trainer Dashboard with valid credentials and prevent
-  unauthorized access with invalid or incomplete credentials.","2825","Trainer Login with invalid or missing credentials","","2026-08-28","passed","2026-08-28","","","",""
-"Description:To check Whether the Functionality of Courses Searching,Enrolling.","6648","verify the search Functionality with invalid Courses","","2026-08-28","passed","2026-08-28","","","",""
-"","15869","To verify MyCourse Button in left drawer redirects to My enrolled Course page","","2026-08-28","passed","2026-08-28","","","",""
-"","29258","To verify that AI-Quiz tab in specific course redirects to its sub tab","","2026-08-28","broken","2026-08-28","","","",""
-"Description:Sign-In Functionality with both valid and invalid case","1874","Signin Functionality with leaving field empty","","2026-08-28","passed","2026-08-28","","","",""
-"Description:Sign-In Functionality with both valid and invalid case","4702","Signin Functionality with invalid credentials","","2026-08-28","passed","2026-08-28","","","",""
-"","26491","To verify that lesson tab in specific course redirects to its sub tab","","2026-08-28","passed","2026-08-28","","","",""
-"Trainer Login functionality should allow authorized trainers
-  to access the Trainer Dashboard with valid credentials and prevent
-  unauthorized access with invalid or incomplete credentials.","2040","Trainer Login with invalid or missing credentials","","2026-08-28","passed","2026-08-28","","","",""
-"Trainers should be able to open the AI Quiz tab for a course,
-  create a quiz manually with a title and two or more questions, and
-  save it as a draft.","7763","Trainer creates a manual quiz with two questions and saves as draft","","2026-08-28","broken","2026-08-28","","","",""
 "Trainer Login functionality should allow authorized trainers
   to access the Trainer Dashboard with valid credentials and prevent
   unauthorized access with invalid or incomplete credentials.","3923","Trainer Login with invalid or missing credentials","","2026-08-28","passed","2026-08-28","","","",""
+"","15869","To verify MyCourse Button in left drawer redirects to My enrolled Course page","","2026-08-28","passed","2026-08-28","","","",""
+"","26491","To verify that lesson tab in specific course redirects to its sub tab","","2026-08-28","passed","2026-08-28","","","",""
+"","8061","To verify the Courses redirects to Specific Course page","","2026-08-28","passed","2026-08-28","","","",""
+"Description:Sign-In Functionality with both valid and invalid case","3911","Signin Functionality with leaving field empty","","2026-08-28","passed","2026-08-28","","","",""
 "Description:To check Whether the Functionality of Courses Searching,Enrolling.","6829","verify the Search Functionality of valid courses","","2026-08-28","passed","2026-08-28","","","",""
-"","30960","Admin views detailed trainer information","","2026-08-28","broken","2026-08-28","","","",""
-"","31390","Admin deletes a trainer","","2026-08-28","broken","2026-08-28","","","",""
-"Description:To check Whether the Functionality of Courses Searching,Enrolling.","9690","verify the filter open shows only unregistered courses","","2026-08-28","passed","2026-08-28","","","",""
-"Description:Sign-In Functionality with both valid and invalid case","3215","Signin Functionality with invalid credentials","","2026-08-28","passed","2026-08-28","","","",""
+"","29258","To verify that AI-Quiz tab in specific course redirects to its sub tab","","2026-08-28","broken","2026-08-28","","","",""
+"","34234","Admin deletes a trainer","","2026-08-28","broken","2026-08-28","","","",""
+"Trainers should be able to open the AI Quiz tab for a course,
+  create a quiz manually with a title and two or more questions, and
+  save it as a draft.","7763","Trainer creates a manual quiz with two questions and saves as draft","","2026-08-28","broken","2026-08-28","","","",""
+"Trainers should be able to open a course's Lessons tab and
+  create a new module by providing a title, description, and optional
+  summary content.","9855","Trainer creates a new module with only the required title","","2026-08-28","broken","2026-08-28","","","",""
 "Trainer Login functionality should allow authorized trainers
   to access the Trainer Dashboard with valid credentials and prevent
-  unauthorized access with invalid or incomplete credentials.","6781","Trainer Login with valid credentials","","2026-08-28","broken","2026-08-28","","","",""
-"","31869","Search and filter trainer","","2026-08-28","broken","2026-08-28","","","",""
-"","8061","To verify the Courses redirects to Specific Course page","","2026-08-28","passed","2026-08-28","","","",""
-"","13865","To verify that Discussion tab in specific course redirects to its sub tab","","2026-08-28","passed","2026-08-28","","","",""
+  unauthorized access with invalid or incomplete credentials.","3095","Trainer Login with invalid or missing credentials","","2026-08-28","passed","2026-08-28","","","",""
+"","25240","Participant details view","","2026-08-28","passed","2026-08-28","","","",""
+"Description:Sign-In Functionality with both valid and invalid case","6737","Signin Functionality with invalid credentials","","2026-08-31","passed","2026-08-31","","","",""
+"Trainer Login functionality should allow authorized trainers
+  to access the Trainer Dashboard with valid credentials and prevent
+  unauthorized access with invalid or incomplete credentials.","2825","Trainer Login with invalid or missing credentials","","2026-08-28","passed","2026-08-28","","","",""
+"","36084","Participant Search","","2026-08-28","broken","2026-08-28","","","",""
+"","46900","Create a new trainer","","2026-08-28","passed","2026-08-28","","","",""
