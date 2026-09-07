@@ -1,4 +1,4 @@
-@Rishwanth  @MyCourse 
+@Rishwanth 
 Feature: To validate all functionalities in Learner Profile Add,Edit,and Delete Operations
 
   Background:
@@ -45,3 +45,69 @@ Feature: To validate all functionalities in Learner Profile Add,Edit,and Delete 
   And the learner clicks on profile Button
   And the learner clicks on view detailed analytics Button in Profile page
   Then the learner should redirected to dashBoardPage
+
+
+Scenario:To verify whether add experience functionality is working as expected
+  And the learner clicks on profile Button
+  And the learner clicks on Experience Button in Profile page
+  And the lerner fill the experience details in the experience form
+  |companyName|Rishwa|
+  |role|Tester|
+  |employeeType|SELF_EMPLOYED|
+  |location|Bangalore|
+  |startDate|2026-09-07|
+  |endDate|2026-10-07|
+  |description|Tester at Rishwa|
+  And click on add Experience confirm button 
+  Then the experiance should be displayed in experiance tab in profile page
+
+
+  Scenario:To verify whether delete experience functionality is working as expected
+  And the learner clicks on profile Button
+  And the learner clicks on delete experience button in profile page
+  And the learner clicks on delete experience confirm button
+  Then the experience should be deleted from experience tab in profile page
+
+  Scenario:To verify whether the experience form accept on leaveing the Company Name fields empty and display the warning message
+  And the learner clicks on profile Button
+  And the learner clicks on Experience Button in Profile page
+  And the lerner fill the experience details in the experience form without the Company Name field
+  |companyName||
+  |role|Developer|
+  |employeeType|SELF_EMPLOYED|
+  |location|Mumbai|
+  |startDate|2026-09-07|
+  |endDate|2026-10-07|
+  |description|Developer at Adhi|
+  And click on add Experience confirm button 
+  Then the warning message should be displayed for the empty field of company name in the experience form
+
+  Scenario:To verify whether the experience form accept on leaveing the Role / Title fields empty and display the warning message
+  And the learner clicks on profile Button
+  And the learner clicks on Experience Button in Profile page
+  And the lerner fill the experience details in the experience form without the Role / Title field
+  |companyName|Adhi|
+  |role||
+  |employeeType|SELF_EMPLOYED|
+  |location|Mumbai|
+  |startDate|2026-09-07|
+  |endDate|2026-10-07|
+  |description|Developer at Adhi|
+  And click on add Experience confirm button 
+  Then the warning message should be displayed for the empty field of role in the experience form
+
+   @MyCourse 
+  Scenario:To verify whether the add experience functionality for currently working learner
+  And the learner clicks on profile Button
+  And the learner clicks on Experience Button in Profile page
+  And the lerner fill the experience details in the experience form for currently working learner 
+  |companyName|Adhi|
+  |role|Developer|
+  |employeeType|SELF_EMPLOYED|
+  |location|Mumbai|
+  |startDate|2026-09-07|
+  |description|Developer at Adhi|
+  And the learner clicks on currently working checkbox in the experience form
+  And click on add Experience confirm button 
+  Then the experience should be displayed in experiance tab in profile page
+

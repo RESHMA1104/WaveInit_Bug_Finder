@@ -38,5 +38,11 @@
       "skillName": "Java",
       "existSkillWarningMsg": "is already in your skills list."
     }
+  ],
+  "experience": [
+    {
+      "companyInputWarningMsg": "Company name is required.",
+      "roleInputWarningMsg": "Role / Title is required."
+    }
   ]
 }
