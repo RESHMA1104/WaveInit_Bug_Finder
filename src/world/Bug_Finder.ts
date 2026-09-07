@@ -20,6 +20,7 @@ import { Interview } from "../test/pages/adminPages/interview";
 import type { AttendancePage } from "../test/pages/learnerPages/learnerattendancepage";
 import type { ProgressAnalyticsPage } from "../test/pages/learnerPages/learnerprogressanalyticspage";
 import type { ProfilePage } from "../test/pages/learnerPages/learnerprofilepage";
+import { ParticipantsPage } from "../test/pages/TrainerParticipantsPage";
 
 
 export class BugFinder extends World {
@@ -47,5 +48,6 @@ export class BugFinder extends World {
     progressanalyticspage!: ProgressAnalyticsPage;
     interview!: Interview;
     profilepage!: ProfilePage;
+    participantsPage!: ParticipantsPage
 }
 setWorldConstructor(BugFinder);
