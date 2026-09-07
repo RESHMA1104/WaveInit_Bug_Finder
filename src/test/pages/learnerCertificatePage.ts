@@ -6,6 +6,7 @@ export class LearnerCertificatePage extends BasePage {
     readonly certificatesOption: Locator;
     readonly certificatePageHeading: Locator;
     readonly certificateImage: Locator;
+    readonly noCertificateMessage: Locator;
 
     constructor(page: Page) {
         super(page);
@@ -17,6 +18,7 @@ export class LearnerCertificatePage extends BasePage {
 
         // Certificate content
         this.certificateImage = page.getByText("Certificate of Completion",{ exact: true });
+        this.noCertificateMessage = page.getByText("No certificates earned yet",{ exact: true });
     }
     async clickCertificatesOption() {
         await this.click(this.certificatesOption);
@@ -26,5 +28,9 @@ export class LearnerCertificatePage extends BasePage {
     }
     async verifyCertificateImage() {
         await this.toBeVisible(this.certificateImage);
+    }
+
+     async verifyCertificateNotAvailable() {
+        await this.toBeVisible(this.noCertificateMessage);
     }
 }
