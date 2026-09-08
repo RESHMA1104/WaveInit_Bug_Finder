@@ -1,0 +1,82 @@
+import { Page, Locator, expect } from "@playwright/test";
+import { BasePage } from "./basepage";
+import { logger } from "../../utils/logger";
+
+export class ParticipantsPage extends BasePage {
+
+    private participantsTab: Locator;
+    private inviteParticipantsBtn: Locator;
+    private approvedParticipantsDialogHeading: Locator;
+    private searchApprovedParticipantsInput: Locator;
+    private selectAllBtn: Locator;
+    private inviteSelectedParticipantsBtn: Locator;
+    private participantAddedToast: Locator;
+
+    constructor(page: Page) {
+        super(page);
+
+        this.participantsTab = page.getByRole("button", { name: "Participants", exact: true })
+            .or(page.getByRole("tab", { name: "Participants", exact: true }));
+
+        this.inviteParticipantsBtn = page.getByRole("button", { name: "Invite Participants" });
+
+        this.approvedParticipantsDialogHeading = page.getByRole("heading", { name: "Approved Participants" });
+
+        this.searchApprovedParticipantsInput = page.getByPlaceholder("Search approved participants...");
+
+        this.selectAllBtn = page.getByRole("button", { name: "Select All" });
+
+        this.inviteSelectedParticipantsBtn = page.getByRole("button", { name: "Invite Selected Participants" });
+
+        this.participantAddedToast = page.locator("//div[normalize-space()='Participant added successfully']");
+    }
+
+    async navigateToParticipantsTab() {
+        logger.info("Navigating to Participants tab");
+        await this.click(this.participantsTab);
+    }
+
+    async openCourse(courseTitle: string) {
+        logger.info(`Opening course: "${courseTitle}"`);
+        const courseItem = this.page.locator("button.wl-sidebar-item, li, a")
+            .filter({ hasText: courseTitle }).first();
+        await this.click(courseItem);
+    }
+
+    async clickInviteParticipants() {
+        logger.info("Clicking 'Invite Participants' button");
+        await this.click(this.inviteParticipantsBtn);
+    }
+
+    async verifyApprovedParticipantsDialogVisible() {
+        logger.info("Verifying Approved Participants dialog is displayed");
+        await this.toBeVisible(this.approvedParticipantsDialogHeading);
+    }
+
+    async searchParticipant(searchTerm: string) {
+        logger.info(`Searching for participant: "${searchTerm}"`);
+        await this.fill(this.searchApprovedParticipantsInput, searchTerm);
+    }
+
+    async selectParticipantByEmail(email: string) {
+        logger.info(`Selecting participant with email: "${email}"`);
+        const participantRow = this.page.locator("div").filter({ hasText: email });
+        const checkbox = participantRow.getByRole("checkbox");
+        await checkbox.check();
+    }
+
+    async clickSelectAll() {
+        logger.info("Clicking 'Select All' button");
+        await this.click(this.selectAllBtn);
+    }
+
+    async clickInviteSelectedParticipants() {
+        logger.info("Clicking 'Invite Selected Participants' button");
+        await this.click(this.inviteSelectedParticipantsBtn);
+    }
+
+    async verifyParticipantAddedSuccessfully() {
+        logger.info("Verifying participant(s) were added successfully");
+        await expect(this.participantAddedToast).toBeVisible({ timeout: 30000 });
+    }
+}
