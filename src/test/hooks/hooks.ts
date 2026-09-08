@@ -14,6 +14,7 @@ import { LearnerCertificatePage } from "../pages/learnerCertificatePage";
 import { MyCoursePage } from "../pages/learnerPages/learnermycoursepage";
 import { CoursePage } from "../pages/learnerPages/learnercoursepage";
 import { CourseQuizPage } from "../pages/TrainerCourseQuizPage";
+import { CodingAssessmentPage } from "../pages/TrainerCodingPage";
 import { TrainerFeature } from "../pages/adminPages/trainerFeature";
 import { Participate } from "../pages/adminPages/participateFeature";
 import { AttendancePage } from "../pages/learnerPages/learnerattendancepage";
@@ -48,6 +49,7 @@ Before(async function (this: BugFinder) {
     this.coursepage = new CoursePage(this.page);
     this.courseQuizPage = new CourseQuizPage(this.page);
     this.trainerFeature = new TrainerFeature(this.page);
+    this.codingAssessmentPage = new CodingAssessmentPage(this.page);
     this.participate = new Participate(this.page);
     this.attendancepage = new AttendancePage(this.page);
     this.progressanalyticspage = new ProgressAnalyticsPage(this.page);
