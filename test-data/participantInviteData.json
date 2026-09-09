@@ -6,5 +6,8 @@
   },
   "selectAllParticipants": {
     "courseTitle": "React"
+  },
+  "refreshParticipants": {
+    "courseTitle": "React"
   }
 }
