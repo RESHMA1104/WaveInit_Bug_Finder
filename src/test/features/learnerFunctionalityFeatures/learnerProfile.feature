@@ -96,7 +96,7 @@ Scenario:To verify whether add experience functionality is working as expected
   And click on add Experience confirm button 
   Then the warning message should be displayed for the empty field of role in the experience form
 
-   @MyCourse 
+   
   Scenario:To verify whether the add experience functionality for currently working learner
   And the learner clicks on profile Button
   And the learner clicks on Experience Button in Profile page
@@ -111,3 +111,98 @@ Scenario:To verify whether add experience functionality is working as expected
   And click on add Experience confirm button 
   Then the experience should be displayed in experiance tab in profile page
 
+
+@MyCourse 
+  Scenario:To verify whether the edit experience functionality is working as expected
+  And the learner clicks on profile Button  
+  And the learner clicks on first edit experience button in Profile page
+  And the learner edit the Role field in the experience form
+  |role|_Edited| 
+  And the learner clicks on Save Changes Button in the experience form
+  Then the experience should be updated successfully in experiance tab in profile page
+
+@MyCourse 
+  Scenario:To verify whether the Add New Project functionality is working as expected
+  And the learner clicks on profile Button
+  And the learner clicks on Project Button in Profile page
+  And the lerner fill the project details in the project form
+  And click on add Project confirm button 
+  Then the project should be displayed in project tab in profile page
+
+@MyCourse 
+Scenario:To verify the Adding Education functionality is working as expected
+  And the learner clicks on profile Button
+  And the learner clicks on Add Education Button in Profile page
+  And the lerner fill the education details in the education form
+  |institute|JMHSS|
+  |degree|B.Tech|
+  |fieldOfStudy|Computer Science|
+  |yearRange|2022-2026|
+  |cgpa|8.34|
+  And click on add Education confirm button 
+  Then the education should be displayed in education tab in profile page
+
+@MyCourse 
+Scenario:To verify whether the edit Education functionality is working as expected
+  And the learner clicks on profile Button  
+  And the learner clicks on first edit education button in Profile page
+  And the learner edit the Institute and Degree field in the education form
+  |institute|JMHSS - Edited|
+  |degree|B.Tech - Edited| 
+  And the learner clicks on Save Changes Button in the education form
+  Then the education should be updated successfully in education tab in profile page 
+
+@MyCourse 
+Scenario:To verify whether the delete Education functionality is working as expected
+  And the learner clicks on profile Button
+  And the learner clicks on delete first education button in Profile page
+  And the learner clicks on delete education confirm button
+  Then the education should be deleted from education tab in profile page
+
+@MyCourse 
+  Scenario:To verify whether the Adding Project without title field in the project form is displaying the warning message
+  And the learner clicks on profile Button
+  And the learner clicks on Project Button in Profile page
+  And the lerner fill the project details in the project form without title field
+  And click on add Project confirm button 
+  Then the warning message should be displayed for the empty field of title in the project form
+
+
+@MyCourse 
+  Scenario:To verify whether the Adding Education without Institute field in the education form is displaying the warning message
+  And the learner clicks on profile Button
+  And the learner clicks on Add Education Button in Profile page
+  And the lerner fill the education details in the education form without Institute field
+  |institute||
+  |degree|B.Tech|
+  |fieldOfStudy|Computer Science| 
+  |yearRange|2022-2026|
+  |cgpa|8.34|
+  And click on add Education confirm button 
+  Then the warning message should be displayed for the empty field of Institute in the education form
+@MyCourse 
+  Scenario:To verify whether the Adding Education without Degree field in the education form is displaying the warning message
+  And the learner clicks on profile Button
+  And the learner clicks on Add Education Button in Profile page
+  And the lerner fill the education details in the education form without Degree field
+  |institute|JMHSS|
+  |degree||
+  |fieldOfStudy|Computer Science|
+  |yearRange|2022-2026|
+  |cgpa|8.34|
+  And click on add Education confirm button
+  Then the warning message should be displayed for the empty field of Degree in the education form
+
+@MyCourse
+  Scenario:To verify edit functionality of About Me section in the profile page
+  And the learner clicks on profile Button
+  And the learner clicks on edit About Me Button in Profile page
+  And the learner enters the About Me details in the About Me text area
+  And the learner clicks on Save Changes Button in the About Me section
+  Then the About Me details should be updated successfully in the profile page
+
+@MyCourse
+  Scenario: To verify the back to dashboard button functionality in the profile page
+  And the learner clicks on profile Button
+  And the learner clicks on back to dashboard button in the profile page
+  Then the learner should be redirected to the dashboard page

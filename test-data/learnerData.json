@@ -44,5 +44,11 @@
       "companyInputWarningMsg": "Company name is required.",
       "roleInputWarningMsg": "Role / Title is required."
     }
+  ],
+  "education": [
+    {
+      "instituteInputWarningMsg": "Institution is required.",
+      "degreeInputWarningMsg": "Degree is required."
+    }
   ]
 }
