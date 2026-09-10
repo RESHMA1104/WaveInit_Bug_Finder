@@ -11,6 +11,8 @@ export class ParticipantsPage extends BasePage {
     private selectAllBtn: Locator;
     private inviteSelectedParticipantsBtn: Locator;
     private participantAddedToast: Locator;
+    private refreshParticipantsBtn: Locator;
+    private participantListRefreshedToast: Locator;
 
     constructor(page: Page) {
         super(page);
@@ -29,6 +31,12 @@ export class ParticipantsPage extends BasePage {
         this.inviteSelectedParticipantsBtn = page.getByRole("button", { name: "Invite Selected Participants" });
 
         this.participantAddedToast = page.locator("//div[normalize-space()='Participant added successfully']");
+
+        this.refreshParticipantsBtn = page.getByRole("button", { name: /refresh/i });
+
+        this.participantListRefreshedToast = page.locator("//div[normalize-space()='Participant list refreshed']");
+
+        
     }
 
     async navigateToParticipantsTab() {
@@ -79,4 +87,15 @@ export class ParticipantsPage extends BasePage {
         logger.info("Verifying participant(s) were added successfully");
         await expect(this.participantAddedToast).toBeVisible({ timeout: 30000 });
     }
+    
+    async clickRefreshParticipants() {
+        logger.info("Clicking 'Refresh Participants' button");
+        await this.click(this.refreshParticipantsBtn);
+    }
+
+    async verifyParticipantListRefreshed() {
+        logger.info("Verifying participant list was refreshed successfully");
+        await expect(this.participantListRefreshedToast).toBeVisible({ timeout: 30000 });
+    }
+
 }
