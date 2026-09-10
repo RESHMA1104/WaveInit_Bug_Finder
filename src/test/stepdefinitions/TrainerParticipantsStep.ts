@@ -50,3 +50,11 @@ When("the trainer clicks the Refresh Participants button", async function (this:
 Then("the participant list should be refreshed successfully", async function (this: BugFinder) {
     await this.participantsPage.verifyParticipantListRefreshed();
 });
+
+When("the trainer clicks the Export Participants button", async function (this: BugFinder) {
+    await this.participantsPage.clickExportParticipants();
+});
+
+Then("the participants CSV should be exported successfully", async function (this: BugFinder) {
+    await this.participantsPage.verifyParticipantsCsvExported();
+});

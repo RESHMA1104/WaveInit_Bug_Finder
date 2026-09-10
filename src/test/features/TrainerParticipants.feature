@@ -40,3 +40,10 @@ Feature: Trainer Invites Approved Participants to a Training
     And the trainer navigates to the Participants tab
     And the trainer clicks the Refresh Participants button
     Then the participant list should be refreshed successfully
+
+  Scenario: Trainer exports the participants list as CSV
+    When the trainer navigates to My Trainings
+    And the trainer opens the course for the "exportParticipants" test data
+    And the trainer navigates to the Participants tab
+    And the trainer clicks the Export Participants button
+    Then the participants CSV should be exported successfully
