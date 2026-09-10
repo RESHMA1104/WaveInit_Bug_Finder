@@ -1,6 +1,7 @@
 import { Page, Locator, expect } from "@playwright/test";
 import { BasePage } from "./basepage";
 import { logger } from "../../utils/logger";
+import { Download } from "@playwright/test";
 
 export class ParticipantsPage extends BasePage {
 
@@ -13,6 +14,10 @@ export class ParticipantsPage extends BasePage {
     private participantAddedToast: Locator;
     private refreshParticipantsBtn: Locator;
     private participantListRefreshedToast: Locator;
+    private exportParticipantsBtn: Locator;
+    private exportedCsvToast: Locator;
+    private lastDownload: Download | null = null;
+
 
     constructor(page: Page) {
         super(page);
@@ -36,6 +41,9 @@ export class ParticipantsPage extends BasePage {
 
         this.participantListRefreshedToast = page.locator("//div[normalize-space()='Participant list refreshed']");
 
+        this.exportParticipantsBtn = page.getByRole("button", { name: /export|download/i });
+
+        this.exportedCsvToast = page.locator("//div[normalize-space()='Exported participants CSV']");
         
     }
 
@@ -87,7 +95,7 @@ export class ParticipantsPage extends BasePage {
         logger.info("Verifying participant(s) were added successfully");
         await expect(this.participantAddedToast).toBeVisible({ timeout: 30000 });
     }
-    
+
     async clickRefreshParticipants() {
         logger.info("Clicking 'Refresh Participants' button");
         await this.click(this.refreshParticipantsBtn);
@@ -98,4 +106,26 @@ export class ParticipantsPage extends BasePage {
         await expect(this.participantListRefreshedToast).toBeVisible({ timeout: 30000 });
     }
 
+    async clickExportParticipants() {
+    logger.info("Clicking 'Export Participants' button and capturing the download");
+
+    // Set up the download listener BEFORE the click, since the download
+    // event can fire immediately after the click resolves.
+    const [download] = await Promise.all([
+        this.page.waitForEvent("download"),
+        this.click(this.exportParticipantsBtn)
+    ]);
+
+    this.lastDownload = download;
+    logger.info(`Download captured: ${download.suggestedFilename()}`);
+}
+
+async verifyParticipantsCsvExported() {
+    logger.info("Verifying CSV export toast is displayed");
+    await expect(this.exportedCsvToast).toBeVisible({ timeout: 30000 });
+
+    logger.info("Verifying a CSV file was actually downloaded");
+    expect(this.lastDownload).not.toBeNull();
+    expect(this.lastDownload!.suggestedFilename()).toMatch(/\.csv$/i);
+}
 }

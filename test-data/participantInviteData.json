@@ -9,5 +9,8 @@
   },
   "refreshParticipants": {
     "courseTitle": "React"
+  },
+  "exportParticipants": {
+    "courseTitle": "React"
   }
 }
