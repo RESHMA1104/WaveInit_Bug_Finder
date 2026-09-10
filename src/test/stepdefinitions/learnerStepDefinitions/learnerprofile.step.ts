@@ -8,6 +8,7 @@ import searchData from "../../../../test-data/learnerData.json";
 import learnerData from "../../../../test-data/learnerData.json";
 import { time } from "console";
 import { readLearnerProjectData, LearnerProjectData } from "../../../utils/csvReader";
+import path from "node:path";
 
 let uniqueSkillName: string;
 let firstSuggestSkill: string;
@@ -19,6 +20,11 @@ let educationData: { institute: string; degree: string; fieldOfStudy: string; ye
 let educationCountBeforeDelete: number;
 let editedEducationData: { institute: string; degree: string };
 let aboutMeDetails: string;
+let certificationTitle: string;
+let certificationCountBeforeDelete: number;
+let resumeFixture = "dummy-resume.pdf";
+
+const profileTestDataPath = (fileName: string) => path.resolve(process.cwd(), "test-data", fileName);
 When('the learner clicks on profile Button', async function (this: BugFinder) {
     logger.info("Clicking on profile button");
     await this.learnerdashboardpage.clickProfileButton();
@@ -362,6 +368,160 @@ Then('the warning message should be displayed for the empty field of Degree in t
     logger.info("Displayed degree warning message: " + warningMessage);
     expect(warningMessage).toContain(learnerData.education[0].degreeInputWarningMsg);
     logger.info("Degree warning validation successful");
+});
+
+When("the learner clicks on Add Certification Button in Profile page", async function (this: BugFinder) {
+    logger.info("Clicking on Add Certification button in Profile page");
+    await this.profilepage.clickAddCertificationButton();
+    logger.info("Add Certification form opened successfully");
+});
+
+When("the learner fills the certification details in the certification form", async function (this: BugFinder, dataTable: any) {
+    const certificationData = dataTable.rowsHash();
+    certificationTitle = certificationData.title;
+    logger.info(`Filling certification form for title: ${certificationData.title}`);
+    await this.profilepage.fillCertificationDetails(
+        certificationData.title,
+        certificationData.issuer,
+        certificationData.credentialId,
+        certificationData.issueDate,
+        certificationData.expiryDate,
+        certificationData.verificationUrl,
+    );
+    logger.info("Certification details entered successfully");
+});
+
+When("the learner fills the certification details without the title field", async function (this: BugFinder, dataTable: any) {
+    const certificationData = dataTable.rowsHash();
+    certificationTitle = "";
+    logger.info("Filling certification form without the certificate title");
+    await this.profilepage.fillCertificationDetails(
+        "",
+        certificationData.issuer,
+        certificationData.credentialId,
+        certificationData.issueDate,
+        certificationData.expiryDate,
+        certificationData.verificationUrl,
+    );
+    logger.info("Certification details entered without the certificate title");
+});
+
+When("the learner uploads the dummy certificate", async function (this: BugFinder) {
+    const certificatePath = profileTestDataPath("dummy-certificate.pdf");
+    logger.info(`Uploading dummy certificate from: ${certificatePath}`);
+    await this.profilepage.uploadCertificate(certificatePath);
+    logger.info("Dummy certificate selected successfully");
+});
+
+When("the learner clicks on Add Certificate confirm button", async function (this: BugFinder) {
+    logger.info("Clicking on Add Certificate confirm button");
+    await this.profilepage.clickAddCertificateConfirmButton();
+    logger.info("Add Certificate confirm button clicked successfully");
+});
+
+Then("the certification should be displayed in certifications tab in profile page", async function (this: BugFinder) {
+    logger.info(`Verifying certification is displayed: ${certificationTitle}`);
+    await expect.poll(() => this.profilepage.isCertificationDisplayed(certificationTitle)).toBe(true);
+    logger.info("Certification display validation successful");
+});
+
+Then("the warning message should be displayed for the empty field of certification title", async function (this: BugFinder) {
+    logger.info("Verifying certification title required warning message");
+    const warningMessage = await this.profilepage.getCertificateTitleWarningMessage();
+    logger.info(`Displayed certification warning message: ${warningMessage}`);
+    expect(warningMessage).toContain("Certificate title is required.");
+    logger.info("Certification title warning validation successful");
+});
+
+When("the learner clicks on first edit certification button in Profile page", async function (this: BugFinder) {
+    logger.info("Clicking on the first Edit Certification button");
+    await this.profilepage.clickFirstEditCertificationButton();
+    logger.info("Edit Certification form opened successfully");
+});
+
+When("the learner clicks on first delete certification button in Profile page", async function (this: BugFinder) {
+    certificationCountBeforeDelete = await this.profilepage.getCertificationCount();
+    logger.info(`Certification count before deletion: ${certificationCountBeforeDelete}`);
+    logger.info("Clicking on the first Delete Certification button");
+    await this.profilepage.clickFirstDeleteCertificationButton();
+    logger.info("Certification delete confirmation opened successfully");
+});
+
+When("the learner clicks on delete certification confirm button", async function (this: BugFinder) {
+    logger.info("Clicking on Delete Certification confirm button");
+    await this.profilepage.clickDeleteConfirmButton();
+    logger.info("Certification deletion confirmed successfully");
+});
+
+Then("the certification should be deleted from certifications tab in profile page", async function (this: BugFinder) {
+    logger.info("Verifying the certification is deleted from the certifications tab");
+    const certificationCountAfterDelete = await this.profilepage.getCertificationCount();
+    logger.info(`Certification count after deletion: ${certificationCountAfterDelete}`);
+    expect(certificationCountAfterDelete).toBe(certificationCountBeforeDelete - 1);
+    logger.info("Certification deletion validation successful");
+});
+
+When("the learner clicks on Upload Resume Button in Profile page", async function (this: BugFinder) {
+
+    logger.info("Clicking on Upload Resume button in Profile page");
+
+    try {
+        await this.profilepage.clickAddResumeButton();
+        logger.info("Resume upload form opened successfully");
+
+
+
+    } catch (error) {
+        await this.profilepage.clickUpdateResumeButton();
+        logger.info("Update Resume button clicked successfully");
+    }
+
+});
+
+When("the learner uploads the dummy resume", async function (this: BugFinder) {
+    resumeFixture = "dummy-resume.pdf";
+    const resumePath = profileTestDataPath(resumeFixture);
+    logger.info(`Uploading dummy resume from: ${resumePath}`);
+    await this.profilepage.uploadResume(resumePath);
+    logger.info("Dummy resume selected successfully");
+});
+
+When("the learner uploads the replacement dummy resume", async function (this: BugFinder) {
+    resumeFixture = "dummy-resume-v2.pdf";
+    const resumePath = profileTestDataPath(resumeFixture);
+    logger.info(`Uploading replacement resume from: ${resumePath}`);
+    await this.profilepage.uploadResume(resumePath);
+    logger.info("Replacement resume selected successfully");
+});
+
+When("the learner clicks on Upload Resume confirm button", async function (this: BugFinder) {
+    logger.info("Clicking on Upload Resume confirm button");
+    await this.profilepage.clickUploadResumeConfirmButton();
+    logger.info("Resume upload confirmed successfully");
+});
+
+When("the learner clicks on delete resume button in Profile page", async function (this: BugFinder) {
+    logger.info("Clicking on Delete Resume button in Profile page");
+    await this.profilepage.clickDeleteResumeButton();
+    logger.info("Resume delete confirmation opened successfully");
+});
+
+When("the learner clicks on delete resume confirm button", async function (this: BugFinder) {
+    logger.info("Clicking on Delete Resume confirm button");
+    await this.profilepage.clickDeleteConfirmButton();
+    logger.info("Resume deletion confirmed successfully");
+});
+
+Then("the resume should be uploaded in resume tab in profile page", async function (this: BugFinder) {
+    logger.info(`Verifying resume is displayed: ${resumeFixture}`);
+    await expect.poll(() => this.profilepage.isResumeDisplayed(resumeFixture)).toBe(true);
+    logger.info("Resume upload validation successful");
+});
+
+Then("the resume empty state should be displayed in profile page", async function (this: BugFinder) {
+    logger.info("Verifying resume empty state");
+    expect(await this.profilepage.isResumeEmpty()).toBe(true);
+    logger.info("Resume empty-state validation successful");
 });
 
 When('the learner clicks on delete first education button in Profile page', async function (this: BugFinder) {

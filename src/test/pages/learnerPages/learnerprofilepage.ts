@@ -55,6 +55,25 @@ export class ProfilePage extends BasePage {
     private aboutMeTextArea: Locator;
     private aboutMeDetails: Locator;
     private backToDashboardButton: Locator;
+    private addCertificationButton: Locator;
+    private certificateTitleInputBox: Locator;
+    private certificateIssuerInputBox: Locator;
+    private credentialIdInputBox: Locator;
+    private certificateIssueDateInputBox: Locator;
+    private certificateExpiryDateInputBox: Locator;
+    private verificationUrlInputBox: Locator;
+    private certificateFileInput: Locator;
+    private addCertificateConfirmButton: Locator;
+    private certificateTitleWarningMessage: Locator;
+    private certificationCards: Locator;
+    private editCertificationButton: Locator;
+    private deleteCertificationButton: Locator;
+    private addResumeButton: Locator;
+    private resumeFileInput: Locator;
+    private uploadResumeConfirmButton: Locator;
+    private resumeEmptyState: Locator;
+    private deleteResumeButton: Locator;
+    private updateResumeButton: Locator;
 
     constructor(page: Page) {
         super(page);
@@ -111,6 +130,25 @@ export class ProfilePage extends BasePage {
         this.aboutMeTextArea = page.locator('//textarea[@placeholder="Brief bio or professional summary..."]');
         this.aboutMeDetails = page.locator('//div[text()="About Me"]/parent::div/parent::div/following-sibling::div');
         this.backToDashboardButton = page.locator('//button[text()=" Back to Dashboard"]');
+        this.addCertificationButton = page.locator('//div[text()="Certifications"]/parent::div/following-sibling::button');
+        this.certificateTitleInputBox = page.locator('//input[@placeholder="e.g. Full Stack Web Developer"]');
+        this.certificateIssuerInputBox = page.locator('//input[@placeholder="Google, AWS, Microsoft, Wave Init..."]');
+        this.credentialIdInputBox = page.locator('//input[@placeholder="e.g. CERT-2026-9812"]');
+        this.certificateIssueDateInputBox = page.locator('(//input[@type="date"])[1]');
+        this.certificateExpiryDateInputBox = page.locator('(//input[@type="date"])[2]');
+        this.verificationUrlInputBox = page.locator('//input[@placeholder="https://verify.certificate.com/..."]');
+        this.certificateFileInput = page.locator('//input[@type="file" and @accept=".pdf,.png,.jpg,.jpeg"]');
+        this.addCertificateConfirmButton = page.locator('//button[normalize-space(.)="Add Certificate"]');
+        this.certificateTitleWarningMessage = page.locator('//div[normalize-space(.)="Certificate title is required."]');
+        this.certificationCards = page.locator('//div[text()="Certifications"]/parent::div/parent::div/following-sibling::div/child::div/child::div');
+        this.editCertificationButton = page.locator('(//button[contains(@title,"Edit Certification") or contains(@title,"Edit Certificate")])[1]');
+        this.deleteCertificationButton = page.locator('(//button[contains(@title,"Delete Certification") or contains(@title,"Delete Certificate")])[1]');
+        this.addResumeButton = page.locator('//button[text()="Upload Resume"]');
+        this.updateResumeButton = page.locator('//button[text()="Update Resume"]');
+        this.resumeFileInput = page.locator('//input[@type="file" and @accept=".pdf,.docx"]');
+        this.uploadResumeConfirmButton = page.locator('(//button[normalize-space(.)="Upload Resume"])[last()]');
+        this.resumeEmptyState = page.locator('//div[text()="No resume uploaded yet."]');
+        this.deleteResumeButton = page.locator('(//button[contains(@title,"Delete Resume") or contains(@title,"Remove Resume")])[1]');
     }
 
     async getLearnerName() {
@@ -200,6 +238,12 @@ export class ProfilePage extends BasePage {
 
     async clickDeleteConfirmButton() {
         await this.click(this.deleteConfirmButton);
+        await this.page.waitForTimeout(5000);
+    }
+
+    async reloadProfilePage() {
+        await this.page.reload({ waitUntil: "domcontentloaded", timeout: 60000 });
+        await expect(this.learnerNameInProfile).toBeVisible({ timeout: 30000 });
     }
     async getCompanyInputWarningMsg() {
         return await this.getInnerText(this.companyInputWarningMsg);
@@ -341,5 +385,88 @@ export class ProfilePage extends BasePage {
     async waitForEducationCount(expectedCount: number) {
         const educationDeleteButtons = this.page.locator('//button[@title="Delete Education"]');
         await expect(educationDeleteButtons).toHaveCount(expectedCount, { timeout: 10000 });
+    }
+
+    async clickAddCertificationButton() {
+        await this.addCertificationButton.waitFor({ state: "visible", timeout: 30000 });
+        await this.click(this.addCertificationButton);
+    }
+
+    async fillCertificationDetails(title: string, issuer: string, credentialId: string, issueDate: string, expiryDate: string, verificationUrl: string) {
+        await this.fill(this.certificateTitleInputBox, title);
+        await this.fill(this.certificateIssuerInputBox, issuer);
+        await this.fill(this.credentialIdInputBox, credentialId);
+        await this.fill(this.certificateIssueDateInputBox, issueDate);
+        await this.fill(this.certificateExpiryDateInputBox, expiryDate);
+        await this.fill(this.verificationUrlInputBox, verificationUrl);
+    }
+
+    async uploadCertificate(filePath: string) {
+        await this.certificateFileInput.setInputFiles(filePath);
+    }
+
+    async clickAddCertificateConfirmButton() {
+        await this.click(this.addCertificateConfirmButton);
+    }
+
+    async getCertificateTitleWarningMessage() {
+        return await this.getInnerText(this.certificateTitleWarningMessage);
+    }
+
+    async isCertificationDisplayed(title: string) {
+        return await this.page.getByText(title, { exact: true }).isVisible();
+    }
+
+    async getCertificationCount() {
+        await this.page.waitForTimeout(5000);
+        return await this.certificationCards.count();
+    }
+
+    async waitForCertificationCount(expectedCount: number) {
+        await expect(this.certificationCards).toHaveCount(expectedCount, { timeout: 30000 });
+    }
+
+    async clickFirstEditCertificationButton() {
+        await this.click(this.editCertificationButton);
+    }
+
+    async clickFirstDeleteCertificationButton() {
+        await this.click(this.deleteCertificationButton);
+    }
+
+    async waitForCertificationDeletion(expectedCount: number) {
+        await expect(this.deleteConfirmButton).toBeHidden({ timeout: 30000 });
+        await expect(this.certificationCards).toHaveCount(expectedCount, { timeout: 30000 });
+    }
+
+    async clickAddResumeButton() {
+        await this.page.waitForTimeout(5000);
+        await this.click(this.addResumeButton);
+    }
+
+    async uploadResume(filePath: string) {
+        await this.resumeFileInput.setInputFiles(filePath);
+    }
+
+    async clickUploadResumeConfirmButton() {
+        await this.click(this.uploadResumeConfirmButton);
+    }
+
+    async clickDeleteResumeButton() {
+        await this.click(this.deleteResumeButton);
+    }
+
+    async isResumeEmpty() {
+        await expect(this.resumeEmptyState).toBeVisible({ timeout: 30000 });
+        return true;
+    }
+
+    async isResumeDisplayed(fileName: string) {
+        return await this.page.getByText(fileName, { exact: false }).isVisible();
+    }
+
+    async clickUpdateResumeButton() {
+        await this.page.waitForTimeout(5000);
+        await this.click(this.updateResumeButton);
     }
 }

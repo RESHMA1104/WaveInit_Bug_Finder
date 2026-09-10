@@ -206,3 +206,103 @@ Scenario:To verify whether the delete Education functionality is working as expe
   And the learner clicks on profile Button
   And the learner clicks on back to dashboard button in the profile page
   Then the learner should be redirected to the dashboard page
+
+  @ProfileCertification @ProfileResume
+  Scenario: To verify adding a certification with a certificate file
+    And the learner clicks on profile Button
+    And the learner clicks on Add Certification Button in Profile page
+    And the learner fills the certification details in the certification form
+      | title            | ISTQB Foundation Level                                      |
+      | issuer           | International Software Testing Qualifications Board         |
+      | credentialId     | ISTQB-2026-001                                              |
+      | issueDate        | 2026-08-15                                                  |
+      | expiryDate       | 2028-08-15                                                  |
+      | verificationUrl  | https://verify.example.test/ISTQB-2026-001                  |
+    And the learner uploads the dummy certificate
+    And the learner clicks on Add Certificate confirm button
+    Then the certification should be displayed in certifications tab in profile page
+
+  @ProfileCertification @ProfileResume
+
+  Scenario: To verify certification title validation
+    And the learner clicks on profile Button
+    And the learner clicks on Add Certification Button in Profile page
+    And the learner fills the certification details without the title field
+      | issuer           | International Software Testing Qualifications Board         |
+      | credentialId     | ISTQB-2026-002                                              |
+      | issueDate        | 2026-08-15                                                  |
+      | expiryDate        | 2028-08-15                                                  |
+      | verificationUrl  | https://verify.example.test/ISTQB-2026-002                  |
+    And the learner clicks on Add Certificate confirm button
+    Then the warning message should be displayed for the empty field of certification title
+
+  @ProfileCertification @ProfileResume
+
+  Scenario: To verify editing a certification
+    And the learner clicks on profile Button
+    And the learner clicks on Add Certification Button in Profile page
+    And the learner fills the certification details in the certification form
+      | title            | Certification To Edit                                         |
+      | issuer           | Wave Init Testing                                             |
+      | credentialId     | EDIT-2026-001                                                  |
+      | issueDate        | 2026-08-15                                                     |
+      | expiryDate        | 2028-08-15                                                     |
+      | verificationUrl  | https://verify.example.test/EDIT-2026-001                      |
+    And the learner uploads the dummy certificate
+    And the learner clicks on Add Certificate confirm button
+    And the learner clicks on first edit certification button in Profile page
+    And the learner fills the certification details in the certification form
+      | title            | Certification To Edit - Updated                               |
+      | issuer           | Wave Init Updated Testing                                      |
+      | credentialId     | EDIT-2026-002                                                  |
+      | issueDate        | 2026-08-15                                                     |
+      | expiryDate       | 2029-08-15                                                     |
+      | verificationUrl  | https://verify.example.test/EDIT-2026-002                      |
+    And the learner clicks on Save Changes Button in the experience form
+    Then the certification should be displayed in certifications tab in profile page
+
+  @ProfileCertification @ProfileResume @DeleteCertification
+  Scenario: To verify deleting a certification
+    And the learner clicks on profile Button
+    And the learner clicks on Add Certification Button in Profile page
+    And the learner fills the certification details in the certification form
+      | title            | Certification To Delete                                      |
+      | issuer           | Wave Init Testing                                             |
+      | credentialId     | DELETE-2026-001                                               |
+      | issueDate        | 2026-08-15                                                    |
+      | expiryDate        | 2028-08-15                                                    |
+      | verificationUrl  | https://verify.example.test/DELETE-2026-001                   |
+    And the learner uploads the dummy certificate
+    And the learner clicks on Add Certificate confirm button
+    And the learner clicks on first delete certification button in Profile page
+    And the learner clicks on delete certification confirm button
+    Then the certification should be deleted from certifications tab in profile page
+
+  @ProfileResume
+  Scenario: To verify uploading a resume
+    And the learner clicks on profile Button
+    And the learner clicks on Upload Resume Button in Profile page
+    And the learner uploads the dummy resume
+    And the learner clicks on Upload Resume confirm button
+    Then the resume should be uploaded in resume tab in profile page
+
+  @ProfileResume
+  Scenario: To verify replacing an uploaded resume
+    And the learner clicks on profile Button
+    And the learner clicks on Upload Resume Button in Profile page
+    And the learner uploads the dummy resume
+    And the learner clicks on Upload Resume confirm button
+    And the learner clicks on Upload Resume Button in Profile page
+    And the learner uploads the replacement dummy resume
+    And the learner clicks on Upload Resume confirm button
+    Then the resume should be uploaded in resume tab in profile page
+
+  @ProfileResume
+  Scenario: To verify deleting an uploaded resume
+    And the learner clicks on profile Button
+    And the learner clicks on Upload Resume Button in Profile page
+    And the learner uploads the dummy resume
+    And the learner clicks on Upload Resume confirm button
+    And the learner clicks on delete resume button in Profile page
+    And the learner clicks on delete resume confirm button
+    Then the resume empty state should be displayed in profile page
