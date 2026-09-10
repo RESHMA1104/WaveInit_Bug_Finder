@@ -51,6 +51,8 @@ export class LearnerDashBoardPage extends BasePage {
     }
 
     async clickProfileButton() {
+        await expect(this.learnerDashBoardAssertion).toBeVisible({ timeout: 30000 });
+        await expect(this.profileButtonLeftDrawer).toBeVisible({ timeout: 30000 });
         await this.click(this.profileButtonLeftDrawer);
     }
 

@@ -1,0 +1,562 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e6]:
+    - link "Skip to main content" [ref=f1e7] [cursor=pointer]:
+      - /url: "#main-content"
+    - link "Skip to navigation" [ref=f1e8] [cursor=pointer]:
+      - /url: "#sidebar-nav"
+    - complementary [ref=f1e9]:
+      - generic [ref=f1e10]:
+        - generic [ref=f1e17] [cursor=pointer]:
+          - generic [ref=f1e18]: WAVE INIT LMS
+          - generic [ref=f1e19]: Learner Portal
+        - navigation [ref=f1e20]:
+          - generic [ref=f1e21]:
+            - generic [ref=f1e22]: OVERVIEW
+            - button "Dashboard" [ref=f1e24] [cursor=pointer]
+          - generic [ref=f1e32]:
+            - generic [ref=f1e33]: LEARNING
+            - generic [ref=f1e34]:
+              - button "My Courses 3" [ref=f1e35] [cursor=pointer]:
+                - generic [ref=f1e40]: My Courses
+                - generic [ref=f1e41]: "3"
+              - generic [ref=f1e45]:
+                - generic [ref=f1e46]:
+                  - button "Rishwa-SDETe4rt5 0L" [ref=f1e47] [cursor=pointer]:
+                    - generic [ref=f1e49]: Rishwa-SDETe4rt5
+                    - generic [ref=f1e50]: 0L
+                  - button "Rishwa-SDETr34tsg 0L" [ref=f1e51] [cursor=pointer]:
+                    - generic [ref=f1e53]: Rishwa-SDETr34tsg
+                    - generic [ref=f1e54]: 0L
+                  - button "Rishwa-SDETrqzer1 0L" [ref=f1e55] [cursor=pointer]:
+                    - generic [ref=f1e57]: Rishwa-SDETrqzer1
+                    - generic [ref=f1e58]: 0L
+                - button "View all (3) courses →" [ref=f1e59] [cursor=pointer]
+            - button "Attendance" [ref=f1e61] [cursor=pointer]
+            - button "Progress & Analytics" [ref=f1e67] [cursor=pointer]
+          - generic [ref=f1e73]:
+            - generic [ref=f1e74]: ASSESSMENTS & RANKING
+            - button "Leaderboard" [ref=f1e76] [cursor=pointer]
+            - button "Achievements" [ref=f1e86] [cursor=pointer]
+          - generic [ref=f1e92]:
+            - generic [ref=f1e93]: ACTIVITY & RECORDS
+            - button "Certificates" [ref=f1e95] [cursor=pointer]
+            - button "Feedback" [ref=f1e102] [cursor=pointer]
+          - generic [ref=f1e107]:
+            - generic [ref=f1e108]: INTERVIEWS
+            - button "Interviews" [ref=f1e110] [cursor=pointer]
+          - generic [ref=f1e116]:
+            - generic [ref=f1e117]: ACCOUNT
+            - button "Profile" [ref=f1e119] [cursor=pointer]
+      - button "RI Rishwa Learner · Online" [ref=f1e127] [cursor=pointer]:
+        - generic [ref=f1e128]: RI
+        - generic [ref=f1e129]:
+          - generic [ref=f1e130]: Rishwa
+          - generic [ref=f1e131]: Learner · Online
+    - main "Profile" [ref=f1e136]:
+      - generic [ref=f1e137]: Manage your account settings
+      - generic [ref=f1e139]:
+        - generic [ref=f1e140]:
+          - generic [ref=f1e145]:
+            - heading "My Profile" [level=2] [ref=f1e146]
+            - paragraph [ref=f1e147]: View and manage your professional profile and information
+          - generic [ref=f1e148]:
+            - button "Back to Dashboard" [ref=f1e149] [cursor=pointer]
+            - button "Edit Profile" [ref=f1e152] [cursor=pointer]
+        - generic [ref=f1e155]:
+          - generic [ref=f1e156]:
+            - generic [ref=f1e157]:
+              - generic [ref=f1e158]: RI
+              - button "Update Profile Photo" [ref=f1e159] [cursor=pointer]
+            - generic [ref=f1e163]:
+              - heading "Rishwa" [level=3] [ref=f1e165]
+              - generic [ref=f1e169]:
+                - generic [ref=f1e170]: PARTICIPANT
+                - generic [ref=f1e171]: Joined Aug 2026
+              - generic [ref=f1e174]:
+                - generic [ref=f1e175]: rishwa@gmail.com
+                - generic [ref=f1e179]: +91 98765 43210
+          - generic [ref=f1e182]:
+            - generic [ref=f1e183]:
+              - text: Participant ID
+              - generic [ref=f1e184]: PAR-1048
+            - generic [ref=f1e185]:
+              - text: Department
+              - generic [ref=f1e186]: Engineering
+            - generic [ref=f1e187]:
+              - text: Designation
+              - generic [ref=f1e188]: Senior Software Engineer
+            - generic [ref=f1e189]:
+              - text: Enrolled Trainings
+              - generic [ref=f1e190]: 3 Programs
+            - generic [ref=f1e191]:
+              - text: Account Status
+              - generic [ref=f1e192]: Active
+        - generic [ref=f1e194]:
+          - generic [ref=f1e195]:
+            - generic [ref=f1e196]: 88%
+            - generic [ref=f1e198]:
+              - heading "Profile Completion" [level=4] [ref=f1e199]
+              - generic [ref=f1e200]: 7/8 Sections Complete
+              - generic [ref=f1e201]: Add more details to reach 100%
+          - generic [ref=f1e202]:
+            - generic [ref=f1e203]:
+              - generic [ref=f1e204]:
+                - heading "Learning Activity Heatmap" [level=4] [ref=f1e205]
+                - button "Activity heatmap information" [ref=f1e207] [cursor=pointer]
+              - combobox [ref=f1e212] [cursor=pointer]:
+                - option "Last 90 Days" [selected]
+                - option "Last 30 Days"
+                - option "Last 180 Days"
+                - option "Last Year"
+            - generic [ref=f1e214]:
+              - generic [ref=f1e215]:
+                - generic [ref=f1e216]: Jun 08
+                - generic [ref=f1e218]: Jun 22
+                - generic [ref=f1e220]: Jul 06
+                - generic [ref=f1e222]: Jul 20
+                - generic [ref=f1e224]: Aug 03
+                - generic [ref=f1e226]: Aug 17
+                - generic [ref=f1e228]: Aug 31
+              - generic [ref=f1e230]:
+                - generic [ref=f1e231]:
+                  - generic [ref=f1e232]: Mon
+                  - generic [ref=f1e234]: Wed
+                  - generic [ref=f1e236]: Fri
+                  - generic [ref=f1e238]: Sun
+                - generic [ref=f1e239]:
+                  - generic [ref=f1e240]:
+                    - generic [ref=f1e246] [cursor=pointer]
+                    - generic [ref=f1e247] [cursor=pointer]
+                  - generic [ref=f1e248]:
+                    - generic [ref=f1e249] [cursor=pointer]
+                    - generic [ref=f1e250] [cursor=pointer]
+                    - generic [ref=f1e251] [cursor=pointer]
+                    - generic [ref=f1e252] [cursor=pointer]
+                    - generic [ref=f1e253] [cursor=pointer]
+                    - generic [ref=f1e254] [cursor=pointer]
+                    - generic [ref=f1e255] [cursor=pointer]
+                  - generic [ref=f1e256]:
+                    - generic [ref=f1e257] [cursor=pointer]
+                    - generic [ref=f1e258] [cursor=pointer]
+                    - generic [ref=f1e259] [cursor=pointer]
+                    - generic [ref=f1e260] [cursor=pointer]
+                    - generic [ref=f1e261] [cursor=pointer]
+                    - generic [ref=f1e262] [cursor=pointer]
+                    - generic [ref=f1e263] [cursor=pointer]
+                  - generic [ref=f1e264]:
+                    - generic [ref=f1e265] [cursor=pointer]
+                    - generic [ref=f1e266] [cursor=pointer]
+                    - generic [ref=f1e267] [cursor=pointer]
+                    - generic [ref=f1e268] [cursor=pointer]
+                    - generic [ref=f1e269] [cursor=pointer]
+                    - generic [ref=f1e270] [cursor=pointer]
+                    - generic [ref=f1e271] [cursor=pointer]
+                  - generic [ref=f1e272]:
+                    - generic [ref=f1e273] [cursor=pointer]
+                    - generic [ref=f1e274] [cursor=pointer]
+                    - generic [ref=f1e275] [cursor=pointer]
+                    - generic [ref=f1e276] [cursor=pointer]
+                    - generic [ref=f1e277] [cursor=pointer]
+                    - generic [ref=f1e278] [cursor=pointer]
+                    - generic [ref=f1e279] [cursor=pointer]
+                  - generic [ref=f1e280]:
+                    - generic [ref=f1e281] [cursor=pointer]
+                    - generic [ref=f1e282] [cursor=pointer]
+                    - generic [ref=f1e283] [cursor=pointer]
+                    - generic [ref=f1e284] [cursor=pointer]
+                    - generic [ref=f1e285] [cursor=pointer]
+                    - generic [ref=f1e286] [cursor=pointer]
+                    - generic [ref=f1e287] [cursor=pointer]
+                  - generic [ref=f1e288]:
+                    - generic [ref=f1e289] [cursor=pointer]
+                    - generic [ref=f1e290] [cursor=pointer]
+                    - generic [ref=f1e291] [cursor=pointer]
+                    - generic [ref=f1e292] [cursor=pointer]
+                    - generic [ref=f1e293] [cursor=pointer]
+                    - generic [ref=f1e294] [cursor=pointer]
+                    - generic [ref=f1e295] [cursor=pointer]
+                  - generic [ref=f1e296]:
+                    - generic [ref=f1e297] [cursor=pointer]
+                    - generic [ref=f1e298] [cursor=pointer]
+                    - generic [ref=f1e299] [cursor=pointer]
+                    - generic [ref=f1e300] [cursor=pointer]
+                    - generic [ref=f1e301] [cursor=pointer]
+                    - generic [ref=f1e302] [cursor=pointer]
+                    - generic [ref=f1e303] [cursor=pointer]
+                  - generic [ref=f1e304]:
+                    - generic [ref=f1e305] [cursor=pointer]
+                    - generic [ref=f1e306] [cursor=pointer]
+                    - generic [ref=f1e307] [cursor=pointer]
+                    - generic [ref=f1e308] [cursor=pointer]
+                    - generic [ref=f1e309] [cursor=pointer]
+                    - generic [ref=f1e310] [cursor=pointer]
+                    - generic [ref=f1e311] [cursor=pointer]
+                  - generic [ref=f1e312]:
+                    - generic [ref=f1e313] [cursor=pointer]
+                    - generic [ref=f1e314] [cursor=pointer]
+                    - generic [ref=f1e315] [cursor=pointer]
+                    - generic [ref=f1e316] [cursor=pointer]
+                    - generic [ref=f1e317] [cursor=pointer]
+                    - generic [ref=f1e318] [cursor=pointer]
+                    - generic [ref=f1e319] [cursor=pointer]
+                  - generic [ref=f1e320]:
+                    - generic [ref=f1e321] [cursor=pointer]
+                    - generic [ref=f1e322] [cursor=pointer]
+                    - generic [ref=f1e323] [cursor=pointer]
+                    - generic [ref=f1e324] [cursor=pointer]
+                    - generic [ref=f1e325] [cursor=pointer]
+                    - generic [ref=f1e326] [cursor=pointer]
+                    - generic [ref=f1e327] [cursor=pointer]
+                  - generic [ref=f1e328]:
+                    - generic [ref=f1e329] [cursor=pointer]
+                    - generic [ref=f1e330] [cursor=pointer]
+                    - generic [ref=f1e331] [cursor=pointer]
+                    - generic [ref=f1e332] [cursor=pointer]
+                    - generic [ref=f1e333] [cursor=pointer]
+                    - generic [ref=f1e334] [cursor=pointer]
+                    - generic [ref=f1e335] [cursor=pointer]
+                  - generic [ref=f1e336]:
+                    - generic [ref=f1e337] [cursor=pointer]
+                    - generic [ref=f1e338] [cursor=pointer]
+                    - generic [ref=f1e339] [cursor=pointer]
+                    - generic [ref=f1e340] [cursor=pointer]
+                    - generic [ref=f1e341] [cursor=pointer]
+                    - generic [ref=f1e342] [cursor=pointer]
+                    - generic [ref=f1e343] [cursor=pointer]
+                  - generic [ref=f1e344]:
+                    - generic [ref=f1e345] [cursor=pointer]
+                    - generic [ref=f1e346] [cursor=pointer]
+                    - generic [ref=f1e347] [cursor=pointer]
+                    - generic [ref=f1e348] [cursor=pointer]
+            - generic [ref=f1e352]:
+              - generic [ref=f1e353]:
+                - generic [ref=f1e354]: No Activity
+                - generic [ref=f1e357]: Low Activity
+                - generic [ref=f1e360]: Medium Activity
+                - generic [ref=f1e363]: High Activity
+              - generic [ref=f1e366]: More activity = darker green
+          - generic [ref=f1e367]:
+            - generic [ref=f1e368]:
+              - heading "Activity Summary (Last 90 Days)" [level=4] [ref=f1e370]:
+                - text: Activity Summary
+                - generic [ref=f1e371]: (Last 90 Days)
+              - generic [ref=f1e372]:
+                - generic [ref=f1e373]:
+                  - generic [ref=f1e374]: Days Active
+                  - generic [ref=f1e379]: "0"
+                - generic [ref=f1e380]:
+                  - generic [ref=f1e381]: Courses Accessed
+                  - generic [ref=f1e386]: "3"
+                - generic [ref=f1e387]:
+                  - generic [ref=f1e388]: Lessons Completed
+                  - generic [ref=f1e394]: "0"
+                - generic [ref=f1e395]:
+                  - generic [ref=f1e396]: Assessments Taken
+                  - generic [ref=f1e402]: "0"
+                - generic [ref=f1e403]:
+                  - generic [ref=f1e404]: Time Spent Learning
+                  - generic [ref=f1e410]: 0m
+            - button "View Detailed Analytics" [ref=f1e411] [cursor=pointer]
+        - generic [ref=f1e414]:
+          - generic [ref=f1e415]:
+            - generic [ref=f1e416]:
+              - generic [ref=f1e417]:
+                - generic [ref=f1e418]: Personal Information
+                - button "Edit" [ref=f1e423] [cursor=pointer]
+              - generic [ref=f1e427]:
+                - generic [ref=f1e428]:
+                  - generic [ref=f1e429]: Full Name
+                  - generic [ref=f1e430]: Rishwa
+                - generic [ref=f1e431]:
+                  - generic [ref=f1e432]: Email Address
+                  - generic [ref=f1e433]: rishwa@gmail.com (Cannot be changed)
+                - generic [ref=f1e434]:
+                  - generic [ref=f1e435]: Phone Number
+                  - generic [ref=f1e436]: +91 98765 43210
+                - generic [ref=f1e437]:
+                  - generic [ref=f1e438]: Participant ID
+                  - generic [ref=f1e439]: PAR-1048
+                - generic [ref=f1e440]:
+                  - generic [ref=f1e441]: Department
+                  - generic [ref=f1e442]: Engineering
+                - generic [ref=f1e443]:
+                  - generic [ref=f1e444]: Designation
+                  - generic [ref=f1e445]: Senior Software Engineer
+                - generic [ref=f1e446]:
+                  - generic [ref=f1e447]: Account Status
+                  - generic [ref=f1e448]: Active
+            - generic [ref=f1e449]:
+              - generic [ref=f1e450]:
+                - generic [ref=f1e451]: Professional Information
+                - button "Edit" [ref=f1e456] [cursor=pointer]
+              - generic [ref=f1e460]:
+                - generic [ref=f1e461]:
+                  - generic [ref=f1e462]: Company / Org
+                  - generic [ref=f1e463]: Wave Init Solutions
+                - generic [ref=f1e464]:
+                  - generic [ref=f1e465]: Department
+                  - generic [ref=f1e466]: Engineering
+                - generic [ref=f1e467]:
+                  - generic [ref=f1e468]: Designation
+                  - generic [ref=f1e469]: Senior Software Engineer
+                - generic [ref=f1e470]:
+                  - generic [ref=f1e471]: Professional Headline
+                  - generic [ref=f1e472]: Senior Software Engineer | React & Node.js Expert
+                - generic [ref=f1e473]:
+                  - generic [ref=f1e474]: Location
+                  - generic [ref=f1e475]: Chennai, India
+                - generic [ref=f1e476]:
+                  - generic [ref=f1e477]: Time Zone
+                  - generic [ref=f1e478]: Asia/Kolkata (IST)
+                - generic [ref=f1e479]:
+                  - generic [ref=f1e480]: Language
+                  - generic [ref=f1e481]: English
+            - generic [ref=f1e482]:
+              - generic [ref=f1e483]:
+                - generic [ref=f1e484]: About Me
+                - button "Edit" [ref=f1e489] [cursor=pointer]
+              - generic [ref=f1e493]: I am a dedicated learner passionate about continuous professional growth.
+          - generic [ref=f1e494]:
+            - generic [ref=f1e495]:
+              - generic [ref=f1e496]:
+                - generic [ref=f1e500]:
+                  - text: Skills
+                  - generic [ref=f1e501]: (11)
+                - button "Add Skill" [ref=f1e502] [cursor=pointer]
+              - generic [ref=f1e505]:
+                - generic [ref=f1e506]:
+                  - text: Node.js
+                  - button "Remove Node.js" [ref=f1e507] [cursor=pointer]
+                - generic [ref=f1e511]:
+                  - text: Java-1788428104105
+                  - button "Remove Java-1788428104105" [ref=f1e512] [cursor=pointer]
+                - generic [ref=f1e516]:
+                  - text: React
+                  - button "Remove React" [ref=f1e517] [cursor=pointer]
+                - generic [ref=f1e521]:
+                  - text: Java-1788803779018
+                  - button "Remove Java-1788803779018" [ref=f1e522] [cursor=pointer]
+                - generic [ref=f1e526]:
+                  - text: JavaScript
+                  - button "Remove JavaScript" [ref=f1e527] [cursor=pointer]
+                - generic [ref=f1e531]:
+                  - text: Java
+                  - button "Remove Java" [ref=f1e532] [cursor=pointer]
+                - generic [ref=f1e536]:
+                  - text: java
+                  - button "Remove java" [ref=f1e537] [cursor=pointer]
+                - generic [ref=f1e541]:
+                  - text: Java-1788804883294
+                  - button "Remove Java-1788804883294" [ref=f1e542] [cursor=pointer]
+                - generic [ref=f1e546]:
+                  - text: Express.js
+                  - button "Remove Express.js" [ref=f1e547] [cursor=pointer]
+                - generic [ref=f1e551]:
+                  - text: Java-1788960196306
+                  - button "Remove Java-1788960196306" [ref=f1e552] [cursor=pointer]
+                - generic [ref=f1e556]:
+                  - text: TypeScript
+                  - button "Remove TypeScript" [ref=f1e557] [cursor=pointer]
+            - generic [ref=f1e561]:
+              - generic [ref=f1e562]:
+                - generic [ref=f1e563]: Experience & Projects
+                - generic [ref=f1e568]:
+                  - button "Experience" [ref=f1e569] [cursor=pointer]
+                  - button "Project" [ref=f1e571] [cursor=pointer]
+              - generic [ref=f1e574]:
+                - generic [ref=f1e577]:
+                  - generic [ref=f1e578]:
+                    - generic [ref=f1e579]: Tester
+                    - generic [ref=f1e580]:
+                      - button "Edit Experience" [ref=f1e581] [cursor=pointer]
+                      - button "Delete Experience" [ref=f1e585] [cursor=pointer]
+                  - generic [ref=f1e589]: Rishwa • Bangalore
+                  - generic [ref=f1e590]: Sep 2026 - Oct 2026
+                  - generic [ref=f1e591]: Tester at Rishwa
+                - generic [ref=f1e594]:
+                  - generic [ref=f1e595]:
+                    - generic [ref=f1e596]: Developer
+                    - generic [ref=f1e597]:
+                      - button "Edit Experience" [ref=f1e598] [cursor=pointer]
+                      - button "Delete Experience" [ref=f1e602] [cursor=pointer]
+                  - generic [ref=f1e606]: Adhi • Mumbai
+                  - generic [ref=f1e607]: Sep 2026 - Present • Ongoing
+                  - generic [ref=f1e608]: Developer at Adhi
+                - generic [ref=f1e611]:
+                  - generic [ref=f1e612]:
+                    - generic [ref=f1e613]: Tester_Edited
+                    - generic [ref=f1e614]:
+                      - button "Edit Experience" [ref=f1e615] [cursor=pointer]
+                      - button "Delete Experience" [ref=f1e619] [cursor=pointer]
+                  - generic [ref=f1e623]: Rishwaundefined • Bangalore
+                  - generic [ref=f1e624]: Sep 2026 - Oct 2026
+                  - generic [ref=f1e625]: Tester at Rishwa
+                - generic [ref=f1e628]:
+                  - generic [ref=f1e629]:
+                    - generic [ref=f1e630]: Tester_Edited
+                    - generic [ref=f1e631]:
+                      - button "Edit Experience" [ref=f1e632] [cursor=pointer]
+                      - button "Delete Experience" [ref=f1e636] [cursor=pointer]
+                  - generic [ref=f1e640]: Rishwa • Bangalore
+                  - generic [ref=f1e641]: Sep 2026 - Oct 2026
+                  - generic [ref=f1e642]: Tester at Rishwa
+                - generic [ref=f1e645]:
+                  - generic [ref=f1e646]:
+                    - generic [ref=f1e647]: Tester_Edited
+                    - generic [ref=f1e648]:
+                      - button "Edit Experience" [ref=f1e649] [cursor=pointer]
+                      - button "Delete Experience" [ref=f1e653] [cursor=pointer]
+                  - generic [ref=f1e657]: Rishwa • Bangalore
+                  - generic [ref=f1e658]: Sep 2026 - Oct 2026
+                  - generic [ref=f1e659]: Tester at Rishwa
+                - generic [ref=f1e662]:
+                  - generic [ref=f1e663]:
+                    - generic [ref=f1e664]: Tester
+                    - generic [ref=f1e665]:
+                      - button "Edit Experience" [ref=f1e666] [cursor=pointer]
+                      - button "Delete Experience" [ref=f1e670] [cursor=pointer]
+                  - generic [ref=f1e674]: Rishwa • Bangalore
+                  - generic [ref=f1e675]: Sep 2026 - Oct 2026
+                  - generic [ref=f1e676]: Tester at Rishwa
+                - generic [ref=f1e679]:
+                  - generic [ref=f1e680]:
+                    - generic [ref=f1e681]: Developer
+                    - generic [ref=f1e682]:
+                      - button "Edit Experience" [ref=f1e683] [cursor=pointer]
+                      - button "Delete Experience" [ref=f1e687] [cursor=pointer]
+                  - generic [ref=f1e691]: Adhi • Mumbai
+                  - generic [ref=f1e692]: Sep 2026 - Present • Ongoing
+                  - generic [ref=f1e693]: Developer at Adhi
+                - generic [ref=f1e696]:
+                  - generic [ref=f1e697]:
+                    - generic [ref=f1e698]: Jalam
+                    - generic [ref=f1e699]:
+                      - button "Edit Project" [ref=f1e700] [cursor=pointer]
+                      - button "Delete Project" [ref=f1e704] [cursor=pointer]
+                  - generic [ref=f1e708]: React
+                - generic [ref=f1e711]:
+                  - generic [ref=f1e712]:
+                    - generic [ref=f1e713]: WaveInit Automation Dashboard
+                    - generic [ref=f1e714]:
+                      - button "Edit Project" [ref=f1e715] [cursor=pointer]
+                      - button "Delete Project" [ref=f1e719] [cursor=pointer]
+                  - generic [ref=f1e723]: Playwright, TypeScript, Cucumber
+                  - generic [ref=f1e724]: Automated learner profile project validation.
+                  - generic [ref=f1e725]:
+                    - link "Code" [ref=f1e726] [cursor=pointer]:
+                      - /url: https://github.com/RESHMA1104/WaveInit_Bug_Finder
+                    - link "Live Demo" [ref=f1e730] [cursor=pointer]:
+                      - /url: https://waveinitlms.online/
+                - generic [ref=f1e737]:
+                  - generic [ref=f1e738]:
+                    - generic [ref=f1e739]: WaveInit Automation Dashboard
+                    - generic [ref=f1e740]:
+                      - button "Edit Project" [ref=f1e741] [cursor=pointer]
+                      - button "Delete Project" [ref=f1e745] [cursor=pointer]
+                  - generic [ref=f1e749]: Playwright, TypeScript, Cucumber
+                  - generic [ref=f1e750]: Automated learner profile project validation.
+                  - generic [ref=f1e751]:
+                    - link "Code" [ref=f1e752] [cursor=pointer]:
+                      - /url: https://github.com/RESHMA1104/WaveInit_Bug_Finder
+                    - link "Live Demo" [ref=f1e756] [cursor=pointer]:
+                      - /url: https://waveinitlms.online/
+                - generic [ref=f1e763]:
+                  - generic [ref=f1e764]:
+                    - generic [ref=f1e765]: WaveInit Automation Dashboard
+                    - generic [ref=f1e766]:
+                      - button "Edit Project" [ref=f1e767] [cursor=pointer]
+                      - button "Delete Project" [ref=f1e771] [cursor=pointer]
+                  - generic [ref=f1e775]: Playwright, TypeScript, Cucumber
+                  - generic [ref=f1e776]: Automated learner profile project validation.
+                  - generic [ref=f1e777]:
+                    - link "Code" [ref=f1e778] [cursor=pointer]:
+                      - /url: https://github.com/RESHMA1104/WaveInit_Bug_Finder
+                    - link "Live Demo" [ref=f1e782] [cursor=pointer]:
+                      - /url: https://waveinitlms.online/
+                - generic [ref=f1e789]:
+                  - generic [ref=f1e790]:
+                    - generic [ref=f1e791]: WaveInit Automation Dashboard
+                    - generic [ref=f1e792]:
+                      - button "Edit Project" [ref=f1e793] [cursor=pointer]
+                      - button "Delete Project" [ref=f1e797] [cursor=pointer]
+                  - generic [ref=f1e801]: Playwright, TypeScript, Cucumber
+                  - generic [ref=f1e802]: Automated learner profile project validation.
+                  - generic [ref=f1e803]:
+                    - link "Code" [ref=f1e804] [cursor=pointer]:
+                      - /url: https://github.com/RESHMA1104/WaveInit_Bug_Finder
+                    - link "Live Demo" [ref=f1e808] [cursor=pointer]:
+                      - /url: https://waveinitlms.online/
+                - generic [ref=f1e815]:
+                  - generic [ref=f1e816]:
+                    - generic [ref=f1e817]: hi
+                    - generic [ref=f1e818]:
+                      - button "Edit Project" [ref=f1e819] [cursor=pointer]
+                      - button "Delete Project" [ref=f1e823] [cursor=pointer]
+                  - generic [ref=f1e827]: dwdb
+                - generic [ref=f1e830]:
+                  - generic [ref=f1e831]:
+                    - generic [ref=f1e832]: WaveInit Automation Dashboard
+                    - generic [ref=f1e833]:
+                      - button "Edit Project" [ref=f1e834] [cursor=pointer]
+                      - button "Delete Project" [ref=f1e838] [cursor=pointer]
+                  - generic [ref=f1e842]: Playwright, TypeScript, Cucumber
+                  - generic [ref=f1e843]: Automated learner profile project validation.
+                  - generic [ref=f1e844]:
+                    - link "Code" [ref=f1e845] [cursor=pointer]:
+                      - /url: https://github.com/RESHMA1104/WaveInit_Bug_Finder
+                    - link "Live Demo" [ref=f1e849] [cursor=pointer]:
+                      - /url: https://waveinitlms.online/
+            - generic [ref=f1e854]:
+              - generic [ref=f1e855]:
+                - generic [ref=f1e856]: Social Links
+                - button "Edit" [ref=f1e861] [cursor=pointer]
+              - generic [ref=f1e865]:
+                - generic [ref=f1e871]:
+                  - generic [ref=f1e872]: LinkedIn
+                  - text: Not linked
+                - generic [ref=f1e877]:
+                  - generic [ref=f1e878]: GitHub
+                  - text: Not linked
+                - generic [ref=f1e882]:
+                  - generic [ref=f1e883]: Twitter / X
+                  - text: Not linked
+                - generic [ref=f1e888]:
+                  - generic [ref=f1e889]: Instagram
+                  - text: Not linked
+                - generic [ref=f1e894]:
+                  - generic [ref=f1e895]: Portfolio
+                  - text: Not linked
+                - generic [ref=f1e900]:
+                  - generic [ref=f1e901]: Website
+                  - text: Not linked
+          - generic [ref=f1e902]:
+            - generic [ref=f1e903]:
+              - generic [ref=f1e904]:
+                - generic [ref=f1e905]: Education
+                - button "Add" [ref=f1e910] [cursor=pointer]
+              - generic [ref=f1e913]:
+                - text: No education records added yet.
+                - button "+ Add Education" [ref=f1e914] [cursor=pointer]
+            - generic [ref=f1e915]:
+              - generic [ref=f1e916]:
+                - generic [ref=f1e917]: Certifications
+                - button "Add" [ref=f1e922] [cursor=pointer]
+              - generic [ref=f1e925]:
+                - text: No certifications listed yet.
+                - button "+ Add Certification" [ref=f1e926] [cursor=pointer]
+            - generic [ref=f1e927]:
+              - generic [ref=f1e928]:
+                - generic [ref=f1e929]: Resume
+                - button "Upload Resume" [ref=f1e934] [cursor=pointer]
+              - generic [ref=f1e940]:
+                - text: No resume uploaded yet.
+                - button "+ Upload Resume" [ref=f1e941] [cursor=pointer]
+            - generic [ref=f1e942]:
+              - generic [ref=f1e943]: Quick Actions
+              - generic [ref=f1e948]:
+                - button "My Courses" [ref=f1e949] [cursor=pointer]
+                - button "Assessments" [ref=f1e953] [cursor=pointer]
+                - button "Certificates" [ref=f1e958] [cursor=pointer]
+                - button "Share Profile" [ref=f1e963] [cursor=pointer]
+  - button "Open WAVE INIT AI LMS Assistant" [ref=f1e971]:
+    - generic: AI Assistant

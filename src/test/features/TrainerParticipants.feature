@@ -33,3 +33,10 @@ Feature: Trainer Invites Approved Participants to a Training
     When the trainer clicks the Select All button
     And the trainer clicks the Invite Selected Participants button
     Then the participant should be added successfully
+
+  Scenario: Trainer refreshes the participants list
+    When the trainer navigates to My Trainings
+    And the trainer opens the course for the "refreshParticipants" test data
+    And the trainer navigates to the Participants tab
+    And the trainer clicks the Refresh Participants button
+    Then the participant list should be refreshed successfully

@@ -1,0 +1,2 @@
+projectTitle,technologies,githubUrl,liveDemoUrl,description,projectTitleWarningMessage
+WaveInit Automation Dashboard,"Playwright, TypeScript, Cucumber",https://github.com/RESHMA1104/WaveInit_Bug_Finder,https://waveinitlms.online/,"Automated learner profile project validation.","Project title is required."

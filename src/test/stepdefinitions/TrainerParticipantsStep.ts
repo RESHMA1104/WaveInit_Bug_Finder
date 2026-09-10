@@ -42,3 +42,11 @@ When("the trainer clicks the Invite Selected Participants button", async functio
 Then("the participant should be added successfully", async function (this: BugFinder) {
     await this.participantsPage.verifyParticipantAddedSuccessfully();
 });
+
+When("the trainer clicks the Refresh Participants button", async function (this: BugFinder) {
+    await this.participantsPage.clickRefreshParticipants();
+});
+
+Then("the participant list should be refreshed successfully", async function (this: BugFinder) {
+    await this.participantsPage.verifyParticipantListRefreshed();
+});
