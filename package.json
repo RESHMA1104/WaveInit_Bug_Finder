@@ -7,7 +7,7 @@
     "test": "cucumber-js",
     "search": "cucumber-js --tags @Search",
     "register": "cucumber-js --tags @Register",
-    "rishwanth": "cucumber-js --tags \"@Rishwanth and not @ExploreCourses\"",
+    "rishwanth": "cucumber-js --tags @Rishwanth",
     "login": "cucumber-js --tags @Login",
     "mycourse": "cucumber-js --tags @MyCourses",
     "pp": "cucumber-js --tags @ProfileResume",
