@@ -1,6 +1,6 @@
 import { BugFinder } from "../../world/Bug_Finder";
-import { Browser, chromium, firefox } from "@playwright/test";
-import { Before, After, BeforeAll, AfterAll, Status, setDefaultTimeout } from "@cucumber/cucumber";
+import { Browser, Page, chromium } from "@playwright/test";
+import { Before, BeforeStep, After, BeforeAll, AfterAll, Status, setDefaultTimeout } from "@cucumber/cucumber";
 import { BasePage } from "../pages/basepage";
 import { SignInPage } from "../pages/siginpage";
 import { LearnerDashBoardPage } from "../pages/learnerPages/learnerdashboardpage";
@@ -26,6 +26,17 @@ import { RegisterPage } from "../pages/adminPages/register";
 
 let browser: Browser;
 setDefaultTimeout(30 * 1000);
+
+async function dismissCookiePopup(page: Page): Promise<void> {
+    const acceptAllButton = page.getByRole("button", {
+        name: "Accept All",
+        exact: true,
+    });
+
+    if (await acceptAllButton.isVisible({ timeout: 1500 }).catch(() => false)) {
+        await acceptAllButton.click();
+    }
+}
 
 BeforeAll(async () => {
     browser = await chromium.launch({ headless: true });
@@ -57,6 +68,10 @@ Before(async function (this: BugFinder) {
     this.interview = new Interview(this.page);
     this.profilepage = new ProfilePage(this.page);
     this.registerPage = new RegisterPage(this.page)
+});
+
+BeforeStep(async function (this: BugFinder) {
+    await dismissCookiePopup(this.page);
 });
 
 After(async function (this: BugFinder, { pickle, result }) {

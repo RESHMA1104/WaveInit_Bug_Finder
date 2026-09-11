@@ -1,4 +1,4 @@
-@Rishwanth
+@Rishwanth @ExploreCourses
 Feature: Rishwanth_Adhishwar_K_25_08_2026 To Check the Course_Enrollment Functionality of an Learner
 Description:To check Whether the Functionality of Courses Searching,Enrolling.
 
