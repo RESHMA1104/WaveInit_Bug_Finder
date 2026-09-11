@@ -54,4 +54,8 @@ Feature: Training Programs Management
              Then the appropriate training sessions should be displayed
              When the admin clicks the Delete button
               And the admin clicks the Delete Confirm button
+<<<<<<< HEAD
              Then the popup message "Training deleted successfully" should be displayed
+=======
+             Then the popup message "Training deleted successfully" should be displayed
+>>>>>>> a9453ffb6cd28b93b1833e2e8086c1fa6f96573b

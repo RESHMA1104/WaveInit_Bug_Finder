@@ -24,6 +24,7 @@ playwright/.auth/
 # ==========================
 reports/
 coverage/
+test-plans/
 
 # ==========================
 # Logs

@@ -45,4 +45,8 @@ Feature: Participant Feature
              Then the appropriate result for "Jack" should be displayed
               And the admin clicks the delete icon in the displayed participant table row
               And the admin clicks the Confirm button in the delete confirmation popup
+<<<<<<< HEAD
              Then the participant should be deleted successfully and the message "Participant removed successfully" should be displayed
+=======
+             Then the participant should be deleted successfully and the message "Participant removed successfully" should be displayed
+>>>>>>> a9453ffb6cd28b93b1833e2e8086c1fa6f96573b

@@ -21,18 +21,21 @@ export class BasePage {
 
     // Fill inside the input field
     async fill(locator: Locator, value: string) {
+        await locator.scrollIntoViewIfNeeded({ timeout: this.timeout });
         await expect(locator).toBeVisible({ timeout: this.timeout });
         await locator.fill(value, { timeout: this.timeout });
     }
 
     // Click the locator
     async click(locator: Locator) {
+        await locator.scrollIntoViewIfNeeded({ timeout: this.timeout });
         await expect(locator).toBeVisible({ timeout: this.timeout });
         await locator.click({ timeout: this.timeout });
     }
 
     // GetText from the locator
     async getText(locator: Locator) {
+        await locator.scrollIntoViewIfNeeded({ timeout: this.timeout });
         await expect(locator).toBeVisible({ timeout: this.timeout });
         return await locator.textContent({ timeout: this.timeout });
     }
@@ -105,6 +108,7 @@ export class BasePage {
 
     // Return the innerText
     async getInnerText(locator: Locator) {
+        await locator.scrollIntoViewIfNeeded({ timeout: this.timeout });
         await expect(locator).toBeVisible({ timeout: this.timeout });
         return await locator.innerText({ timeout: this.timeout });
     }

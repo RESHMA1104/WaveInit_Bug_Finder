@@ -1,0 +1,45 @@
+- generic [ref=e72]:
+  - generic [ref=e73]:
+    - generic [ref=e74]: WAVE INIT LMS
+    - generic [ref=e80]:
+      - heading "Empower Learning. Enable Growth. Welcome to Wave Init LMS" [level=1] [ref=e81]: Empower Learning.Enable Growth.Welcome to Wave Init LMS
+      - paragraph [ref=e82]: A smart learning platform to create, deliver, assess and track learning outcomes in one place.
+      - generic [ref=e83]:
+        - img "Wave Init LMS Interactive Classroom"
+  - generic [ref=e85]:
+    - generic [ref=e86]:
+      - heading "Create Account" [level=2] [ref=e91]
+      - paragraph [ref=e92]: Join as a participant to start learning
+    - generic [ref=e93]:
+      - generic [ref=e94]:
+        - generic [ref=e95]: Full Name
+        - textbox "Full Name" [ref=e97]:
+          - /placeholder: John Doe
+      - generic [ref=e98]:
+        - generic [ref=e99]: Email Address
+        - textbox "Email Address" [ref=e101]:
+          - /placeholder: john@example.com
+      - generic [ref=e102]:
+        - generic [ref=e103]: Phone Number
+        - textbox "Phone Number" [ref=e105]:
+          - /placeholder: e.g., 9876543210
+      - generic [ref=e106]:
+        - generic [ref=e107]: Password
+        - generic [ref=e108]:
+          - textbox "Password" [ref=e109]:
+            - /placeholder: Minimum 8 characters (mixed case, number, symbol)
+          - button "Show password" [ref=e110] [cursor=pointer]
+      - generic [ref=e114]:
+        - generic [ref=e115]: Confirm Password
+        - generic [ref=e116]:
+          - textbox "Confirm Password" [ref=e117]:
+            - /placeholder: Re-enter your password
+          - button "Show password" [ref=e118] [cursor=pointer]
+      - generic [ref=e123]:
+        - checkbox "I agree to the Terms of Service" [checked] [active] [ref=e124] [cursor=pointer]
+        - generic [ref=e125] [cursor=pointer]: I agree to the Terms of Service
+      - button "Create Account" [ref=e126] [cursor=pointer]
+    - generic [ref=e128]:
+      - generic [ref=e129]: Already have an account?
+      - link "Sign in" [ref=e130] [cursor=pointer]:
+        - /url: /login
